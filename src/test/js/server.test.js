@@ -15,7 +15,7 @@ const stripSlash = s => s.endsWith('/') ? s.slice(0, -1) : s;
 
 describe('Express server – status', () => {
   /* ----------------------------------------------------------
-   *  0. Redirect from / to /WebLanding/
+   *  0. Redirect from / to /Welcome/
    * ---------------------------------------------------------- */
   it('GET /status returns 200 and JSON', async () => {
     const response = await supertest(app).get('/status');
@@ -27,48 +27,48 @@ describe('Express server – status', () => {
 
 describe('Express server – context‑root handling', () => {
   /* ----------------------------------------------------------
-   *  1. Redirect from / to /WebLanding/
+   *  1. Redirect from / to /Welcome/
    * ---------------------------------------------------------- */
-  it('GET / should redirect to /WebLanding/', async () => {
+  it('GET / should redirect to /Welcome/', async () => {
     const res = await supertest(app).get('/');
     assert.strictEqual(res.status, 301);
-    assert.strictEqual(res.headers.location, '/WebLanding/');
+    assert.strictEqual(res.headers.location, '/Welcome/');
   });
 
   /* ----------------------------------------------------------
-   *  2. GET /WebLanding to home page
+   *  2. GET /Welcome to home page
    * ---------------------------------------------------------- */
-  it('GET /WebLanding redirects to /WebLanding/', async () => {
-    const res = await supertest(app).get('/WebLanding');
+  it('GET /Welcome redirects to /Welcome/', async () => {
+    const res = await supertest(app).get('/Welcome');
     assert.strictEqual(res.status, 301);
-    assert.strictEqual(res.headers.location, '/WebLanding/');
+    assert.strictEqual(res.headers.location, '/Welcome/');
   });
 
   /* ----------------------------------------------------------
-   *  3. GET /WebLanding/ to home page (regardless of trailing slash)
+   *  3. GET /Welcome/ to home page (regardless of trailing slash)
    * ---------------------------------------------------------- */
-  it('GET /WebLanding/ should return the home page', async () => {
-    const res = await supertest(app).get('/WebLanding/');
+  it('GET /Welcome/ should return the home page', async () => {
+    const res = await supertest(app).get('/Welcome/');
     assert.strictEqual(res.status, 200);
     assert.match(res.text, /<html/);
     assert.match(res.text, /Baseline Logic Systems/);
   });
 
   /* ----------------------------------------------------------
-   *  4. GET /WebLanding/index.html → home page
+   *  4. GET /Welcome/index.html → home page
    * ---------------------------------------------------------- */
-  it('GET /WebLanding/index.html should return the home page', async () => {
-    const res = await supertest(app).get('/WebLanding/index.html');
+  it('GET /Welcome/index.html should return the home page', async () => {
+    const res = await supertest(app).get('/Welcome/index.html');
     assert.strictEqual(res.status, 200);
     assert.match(res.text, /<html/);
     assert.match(res.text, /Baseline Logic Systems/);
   });
 
   /* ----------------------------------------------------------
-   *  5. GET /WebLanding/home → 404 (page not defined)
+   *  5. GET /Welcome/home → 404 (page not defined)
    * ---------------------------------------------------------- */
-  it('GET /WebLanding/home should return 404 (not found)', async () => {
-    const res = await supertest(app).get('/WebLanding/home');
+  it('GET /Welcome/home should return 404 (not found)', async () => {
+    const res = await supertest(app).get('/Welcome/home');
     assert.strictEqual(res.status, 404);
     assert.match(res.text, /404 – Page Not Found/);
   });
@@ -77,10 +77,10 @@ describe('Express server – context‑root handling', () => {
 describe('Express server – config file handling', () => {
 
   /* ----------------------------------------------------------
-   *  6. GET /WebLanding/config/config.json → JSON payload
+   *  6. GET /Welcome/config/config.json → JSON payload
    * ---------------------------------------------------------- */
-  it('GET /WebLanding/config/config.json should return JSON config', async () => {
-    const res = await supertest(app).get('/WebLanding/config/config.json');
+  it('GET /Welcome/config/config.json should return JSON config', async () => {
+    const res = await supertest(app).get('/Welcome/config/config.json');
     assert.strictEqual(res.status, 200);
     assert.strictEqual(res.headers['content-type'].includes('application/json'), true);
     const cfg = JSON.parse(res.text);
@@ -88,10 +88,10 @@ describe('Express server – config file handling', () => {
   });
 
   /* ----------------------------------------------------------
-   *  8. GET /WebLanding/config/unknown.json returns 404
+   *  8. GET /Welcome/config/unknown.json returns 404
    * ---------------------------------------------------------- */
-  it('GET /WebLanding/config/.env.production.json should return 404', async () => {
-    const res = await supertest(app).get('/WebLanding/config/.env.production.json');
+  it('GET /Welcome/config/.env.production.json should return 404', async () => {
+    const res = await supertest(app).get('/Welcome/config/.env.production.json');
     assert.strictEqual(res.status, 404);
     assert.match(res.text, /404 – Page Not Found/);
   });

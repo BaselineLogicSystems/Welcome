@@ -34,7 +34,7 @@ export async function loadConfig() {
   if (_cachedConfig) return _cachedConfig;
   if (_configPromise) return _configPromise;
 
-  const baseURL = '/WebLanding/config/';
+  const baseURL = '/Welcome/config/';
 
   _configPromise = (async () => {
     // Load base config.json
@@ -47,7 +47,7 @@ export async function loadConfig() {
 export async function loadSiteData() {
   if (_seoPromise) return _seoPromise;
 
-  const baseURL = '/WebLanding/config/';
+  const baseURL = '/Welcome/config/';
 
   _seoPromise = (async () => {
     // Load base config.json

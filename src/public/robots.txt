@@ -4,4 +4,4 @@ Allow: /index.html
 
 Disallow: /
 
-Sitemap: http://www.baseline-logic.com/WebLanding/sitemap.xml
+Sitemap: https://baseline-logic.com/Welcome/sitemap.xml

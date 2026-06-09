@@ -1,8 +1,8 @@
 {
   "app": {
     "buildStatic": false,
-    "contextRoot": "/WebLanding",
-    "name": "WebLanding",
+    "contextRoot": "/Welcome",
+    "name": "Welcome",
     "title": "Web Landing Page",
     "image": {
       "imageFile": "banner0.jpg",

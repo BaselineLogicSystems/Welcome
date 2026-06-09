@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const contactFeedback = document.getElementById('contactFeedback');
 
-    const contextRoot = '/WebLanding';
+    const contextRoot = '/Welcome';
 
     async function handleEmailAction(action) {
         const email = emailInput.value.trim();

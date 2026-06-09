@@ -5,8 +5,8 @@ import supertest from 'supertest';
 
 import app from '../../../public/server.js';
 
-const EMAIL_API = '/WebLanding/api/emails';
-const CONTACT_API = '/WebLanding/api/contact';
+const EMAIL_API = '/Welcome/api/emails';
+const CONTACT_API = '/Welcome/api/contact';
 
 describe('Email & Contact API - Persistence & Validation', () => {
 

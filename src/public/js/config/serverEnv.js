@@ -19,7 +19,7 @@ const getEnvBool = (key, defaultValue) => {
 };
 
 export const SERVER_CONFIG = {
-    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/WebLanding',
+    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/Welcome',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
     ROOT_DIR: __dirname,
