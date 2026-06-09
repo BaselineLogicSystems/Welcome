@@ -1,0 +1,7 @@
+User-Agent: *
+
+Allow: /index.html
+
+Disallow: /
+
+Sitemap: http://www.baseline-logic.com/WebLanding/sitemap.xml

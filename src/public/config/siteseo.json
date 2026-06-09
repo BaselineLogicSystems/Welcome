@@ -1,0 +1,25 @@
+{
+  "favicon": "images/favicon.png",
+  "stylesheet": "css/main.css",
+
+  "ld": {
+    "description": "Baseline Logic Systems, LLC.  Professional consulting and services.",
+    "keywords": "Technology, Small Business Professional Services",
+    "name": "Baseline Logic Systems, LLC",
+    "number": "+1 303-638-4448",
+    "pageUrl": "https://github.com/Baseline-Logic-Systems/Welcome",
+    "title": "Baseline Logic Systems, LLC"
+  },
+
+  "og": {
+    "type": "profile",
+    "title": "Baseline Logic Systems, LLC",
+    "description": "Providing professional consulting and services for small businesses in Colorado front range area."
+  },
+
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Baseline Logic Systems, LLC",
+    "description": "Providing professional consulting and services for small businesses in Colorado front range area."
+  }
+}

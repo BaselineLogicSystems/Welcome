@@ -1,0 +1,28 @@
+
+:root {
+    /* Brand Colors - Professional & Trustworthy */
+    --color-primary: #1a365d;       /* Deep Navy */
+    --color-secondary: #2c5282;     /* Steel Blue */
+    --color-accent: #ecc94b;        /* Gold/Yellow for CTAs */
+    --color-text-main: #2d3748;     /* Dark Grey */
+    --color-text-muted: #718096;    /* Medium Grey */
+    --color-bg-light: #f7fafc;      /* Off-white background */
+    --color-white: #ffffff;
+    --color-error: #c53030;         /* Alert Red */
+
+    /* Typography */
+    --font-family-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-weight-bold: 700;
+
+    /* Spacing & Borders */
+    --spacing-unit: 8px;
+    --border-radius: 4px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+body {font-family: system-ui, sans-serif; margin: 2rem; text-align: center;}
+h1 {font-size: 2.5rem; color: #c00;}
+p {font-size: 1.2rem;}
+a {color: #0066cc; text-decoration: none;}
+a:hover {text-decoration: underline;}

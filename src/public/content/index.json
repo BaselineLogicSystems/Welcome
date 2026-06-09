@@ -1,0 +1,73 @@
+{
+  "stories": [
+    {
+      "title": "Your business is only as safe as your last restore.",
+      "message": "<p>Everybody with some digital data today - (which IS everyone, in this modern world) - should be aware of the common failure patterns of modern technology, ideally before they loose something valuable.</p><p>Stop relying on 'green checkmarks' and the illusion of the cloud. Build a professional-grade Baseline for your data so you can sleep soundly knowing your business is recoverable.</p>",
+      "section": "top",
+      "linkAddress": "#risks",
+      "linkText": "Are your backups bullet-proof? Are you Sure?",
+      "storyImage": "gen/EasyWorkspace1.jpeg",
+      "storyImageText": "The shadow of risk"
+    },
+    {
+      "enabled": true,
+      "title": "The Hidden Risk in Your 'Cloud' Backup.",
+      "message": "<p>Most business owners believe they are \"protected\" because they use Dropbox, Google Drive, or OneDrive. But there is a dangerous difference between Accessibility and Sovereignty.</p><p></p><p>  <ul><li>The data is uncorrupted.</li><li>The encryption keys still work.</li><li>The recovery process is actually fast enough to save your business.</li><li>You can't be locked out of your account by service providers.</li></ul><p><b>If you're relying on a single provider for your business's survival, you aren't running a business—you're renting one.</b></p>",
+      "section": "risks",
+      "linkAddress": "#inside",
+      "linkText": "What's the solution?",
+      "storyImage": "gen/EasyChecklight1.jpeg",
+      "storyImageText": "The 'Green Checkmark' Trap"
+    },
+    {
+      "enabled": true,
+      "title": "Introducing: The Backup Blueprint!  by Baseline Logic.",
+      "message": "<h3> A Strategist's Guide to Resilience</h3><p>You don't need an enterprise IT budget to have enterprise-grade security. You just need a <b>Baseline</b>.</p><p>The Backup Blueprint is a step-by-step framework designed to take you from \"hoping for the best\" to \"knowing you're safe.\" No jargon, no over-engineering - just the exact architecture used by the pros to eliminate single points of failure.</p><p><b>Inside the Blueprint, you will discover:</b></p>  <ul><li><b>The 3-2-1-1 Standard:</b> The gold standard for survival that protects you even from account lockouts and ransomware.</li><li><b>The Data Map:</b> How to find your \"invisible\" data hidden in SaaS silos and cloud applications.</li><li><b>The Restore Fire-Drill:</b> A simple process to prove your backups actually work before you need them.</li><li><b>The Digital Estate Plan:</b> How to ensure your business survives even if you aren't there to hit the \"restore\" button.</li></ul>",
+      "section": "inside",
+      "linkAddress": "#offer",
+      "linkText": "Be Proactive!",
+      "storyImage": "gen/gen-3211.svg",
+      "storyImageText": "The Baseline Logic Systems presents: The Backup Blueprint"
+    },
+    {
+      "enabled": true,
+      "title": "Is this for you?",
+      "message": "<p>This guide is designed specifically for the independent business owner, the freelancer, and the small agency founder.</p><p><b>This is for you if:</b></p><ul><li>Your critical data is scattered across multiple cloud apps and you're not sure if it's all being saved.</li><li>You've never actually performed a full \"fire-drill\" restore of your business.</li><li>The thought of a total data loss makes you lose sleep.</li><li>You want a professional-grade system, but you don't have a full-time IT department</li></ul>",
+      "section": "qualify",
+      "linkAddress": "#offer",
+      "linkText": "Are you ready?",
+      "storyImage": "gen/EasyBusowner1.jpeg",
+      "storyImageText": "Business owners have some difficult decisions to make."
+    },
+    {
+      "enabled": true,
+      "title": "Secure Your Baseline Today.",
+      "message": "<p>Stop gambling with your legacy. Get the full professional framework and start building your resilience today.</p><p><b>The Backup Blueprint.  Price: $49</b><br>(One-time payment. Digital PDF download.)</p><div class=\"payment-service\"></div><p>Not ready to buy? Join the waitlist to receive my weekly \"Micro-Lessons\" on data sovereignty and resilience.</p>",
+      "section": "offer",
+      "linkAddress": "#risks",
+      "linkText": "Beware these common traps!",
+      "storyImage": "gen/EasyProfessional1.jpeg",
+      "storyImageText": "Secure your piece of mind"
+    },
+    {
+      "enabled": false,
+      "title": "Testimonials!",
+      "message": "<p><i>This has great potential.  I can see this being really fundamental.</i></p>",
+      "section": "testimonials",
+      "linkAddress": "#risks",
+      "linkText": "Beware these common traps!",
+      "storyImage": "stories/flowers1.jpeg",
+      "storyImageText": "Secure your piece of mind"
+    },
+    {
+      "enabled": false,
+      "title": "Meet Your Baseline Strategist.",
+      "message": "<p>I’ve spent three decades as a full-stack developer and IT consultant. In that time, I’ve seen it all: the catastrophic server failures, the \"impossible\" data losses, and the terrifying moment a business realizes their \"backup\" was actually empty.</p>\n<p>I’ve spent my career building complex systems for global giants, but I realized that small business owners are being left behind—sold \"convenience\" instead of \"security.\"</p>\n<p>I founded Baseline Consulting to change that. I don't believe in over-engineering or expensive, bloated software. I believe in Precision. I believe in the \"Baseline\"—a rock-solid, lean foundation that ensures no matter what happens in the digital world, your business keeps moving forward.</p>",
+      "section": "meettheauthor",
+      "linkAddress": "#testimonials",
+      "linkText": "See the feedback",
+      "storyImage": "stories/BoyInShade.jpeg",
+      "storyImageText": "The Baseline Strategist (and helper)"
+    }
+  ]
+}

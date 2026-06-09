@@ -1,0 +1,34 @@
+/* Navigation styling */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;            /* allow wrap on small screens */
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background: var(--accent2);
+}
+
+/* Mobile tweak – stack vertically on narrow screens */
+/*@media (max-width: 600px) {*/
+/*  nav ul {*/
+/*    flex-direction: column;*/
+/*    align-items: stretch;*/
+/*  }*/
+
+/*  nav a {*/
+/*    text-align: center;*/
+/*  }*/
+/*}*/

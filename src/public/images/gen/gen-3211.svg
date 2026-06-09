@@ -1,0 +1,39 @@
+
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f8f9fa" rx="10"/>
+
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">The 3-2-1-1 Resilience Architecture</text>
+
+    <!-- Central Data Source -->
+    <rect x="350" y="150" width="100" height="60" rx="5" fill="#00BFFF" />
+    <text x="400" y="185" text-anchor="middle" font-family="Arial" font-size="14" fill="white" font-weight="bold">LIVE DATA</text>
+
+    <!-- 3 Copies (Local) -->
+    <path d="M350 180 L200 120" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+    <rect x="120" y="80" width="120" height="60" rx="5" fill="#ddd" stroke="#999" />
+    <text x="180" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Copy 1 (Local)</text>
+
+    <!-- 2 Media (Cloud) -->
+    <path d="M450 180 L600 120" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+    <rect x="560" y="80" width="120" height="60" rx="5" fill="#ddd" stroke="#999" />
+    <text x="620" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Copy 2 (Cloud/SaaS)</text>
+
+    <!-- 1 Offsite (External) -->
+    <path d="M400 210 L400 280" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+    <rect x="340" y="280" width="120" height="60" rx="5" fill="#eee" stroke="#999" />
+    <text x="400" y="315" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Copy 3 (Sovereign)</text>
+
+    <!-- 1 Air-Gapped (The Gold Standard) -->
+    <path d="M460 310 L600 310" stroke="#ff8f39" stroke-width="3" marker-end="url(#arrowhead)" />
+    <rect x="620" y="280" width="120" height="60" rx="5" fill="#2c5282" stroke="#d4742a" />
+    <text x="680" y="315" text-anchor="middle" font-family="Arial" font-size="12" fill="white" font-weight="bold">Air gapped, Verified</text>
+
+    <!-- Definitions -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+        </marker>
+    </defs>
+</svg>

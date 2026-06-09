@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="Initial content commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/BaselineLogicSystems.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Welcome.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/build-static.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/build-unix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/build-windows.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/clean-unix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/clean-windows.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/clean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/build/devServe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/components/emailUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/config/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/config/siteseo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/content/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/print.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/banner0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyBusowner1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyChecklight1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyProfessional1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyWorkspace1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/gen/gen-3211.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactUi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribeApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribeUi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/components/authServer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/config/clientConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/config/serverConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/contactEmail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/controllers/contact.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/controllers/subscribe.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutFooter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutMain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutNav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/analytics.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/convertkit.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/logger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/login.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/nodemailer.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/rateLimiter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/services/contact.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/js/services/subscribe.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/components/emailContact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/components/emailSubscribe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/disclaimer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/error404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/pages/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/routes/api.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/routes/web.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/schemas/contact.schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/schemas/subscribe.schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/sitemap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/js/emailApi.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/js/server.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test-runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="87" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="dev/refactor/mvc" />
+    <option name="OPTIONS">
+      <set>
+        <option value="FF_ONLY" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="dev/refactor/mvc" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev/features/serverless" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOR7pLk87d_LRs&quot;,
+        &quot;number&quot;: 3
+      },
+      &quot;lastSeen&quot;: 1779402104143
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOR7pLk87jQsjz&quot;,
+        &quot;number&quot;: 4
+      },
+      &quot;lastSeen&quot;: 1780692866347
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zacvohs/zv.ui.weblanding.git&quot;,
+    &quot;accountId&quot;: &quot;31b32ef3-7fd2-4219-96a9-d197197c5a26&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;zacvohs&quot;,
+    &quot;repository&quot;: &quot;zv.ui.weblanding&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0011566155862304" />
+      <entry key="MS500" value="1.4066875618093273" />
+      <entry key="S2" value="2.411629747267922" />
+      <entry key="S5" value="3.2184070233816837" />
+      <entry key="S10" value="3.8620452260660043" />
+      <entry key="S30" value="4.86544573775007" />
+      <entry key="S60" value="5.567214954301509" />
+      <entry key="M2" value="6.148475640852036" />
+      <entry key="M5" value="6.630956143309169" />
+      <entry key="M10" value="8.542139682841118" />
+      <entry key="M15" value="16.31444190488711" />
+      <entry key="M30" value="61.1282039352666" />
+      <entry key="H1" value="146.62106068281207" />
+      <entry key="H2" value="278.7990392909356" />
+      <entry key="H4" value="569.25383515203" />
+      <entry key="D1" value="5859.509159203606" />
+      <entry key="W1" value="19900.6867210601" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="4.183530359642143E-136" />
+      <entry key="S60" value="2.045368025476615E-68" />
+      <entry key="M2" value="1.4301636359090523E-34" />
+      <entry key="M5" value="2.898373114482798E-14" />
+      <entry key="M10" value="1.7024610990137607E-7" />
+      <entry key="M15" value="3.0718678279300055E-5" />
+      <entry key="M30" value="0.005623017286935997" />
+      <entry key="H1" value="0.09652794824164847" />
+      <entry key="H2" value="0.6809547298467931" />
+      <entry key="H4" value="2.4926854471263917" />
+      <entry key="D1" value="13.431511378956364" />
+      <entry key="W1" value="29.06656939046102" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.6835095241660557" />
+      <entry key="MS500" value="1.279996808503484" />
+      <entry key="S2" value="2.348156116496338" />
+      <entry key="S5" value="3.1847490872803967" />
+      <entry key="S10" value="3.842064083062245" />
+      <entry key="S30" value="4.855669011968745" />
+      <entry key="S60" value="5.560617445916507" />
+      <entry key="M2" value="6.144395691933706" />
+      <entry key="M5" value="6.629061066901518" />
+      <entry key="M10" value="8.541104225565979" />
+      <entry key="M15" value="16.313642393598347" />
+      <entry key="M30" value="61.13295716819173" />
+      <entry key="H1" value="146.71657346660402" />
+      <entry key="H2" value="279.47876780010955" />
+      <entry key="H4" value="571.744967477711" />
+      <entry key="D1" value="5872.9382637149865" />
+      <entry key="W1" value="19929.752242669027" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3E2TmDi6dJIfFWPTPAfW7HeIZVQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/zvohs/ZacVohs/Baseline-Logic-Systems/Welcome/src/public/js/config&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.ci.executor&quot;: &quot;Run&quot;,
+    &quot;npm.install express-rate-limit.executor&quot;: &quot;Run&quot;,
+    &quot;npm.install mongoose redis.executor&quot;: &quot;Run&quot;,
+    &quot;npm.install pino pino-pretty.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\js\config" />
+      <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\js\middleware" />
+      <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\images\gen" />
+      <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\js\layout" />
+      <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zvohs\ZacVohs\BaselineBackupSystems\.idea" />
+      <recent name="C:\Users\zvohs\ZacVohs\Consulting\zv.ui.weblanding" />
+      <recent name="C:\Users\zvohs\ZacVohs\Consulting\zv.ui.weblanding\src" />
+      <recent name="C:\Users\zvohs\ZacVohs\Consulting\zv.ui.weblanding\src\public\js\client" />
+      <recent name="C:\Users\zvohs\ZacVohs\Consulting\zv.ui.weblanding\src\public\js\pages" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\zvohs\ZacVohs\Consulting\zv.ui.weblanding\src\public\js\config\env.js" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="build" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="powershell.exe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="" />
+      <created>1779375822678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779375822678</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Incremental - adding email function">
+      <option name="closed" value="true" />
+      <created>1779393785216</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779393785216</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Incremental, Email functionality working with local repository.">
+      <option name="closed" value="true" />
+      <created>1779401392754</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779401392754</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Incremental style and noscript improvements">
+      <option name="closed" value="true" />
+      <created>1779417903060</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779417903060</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Incremental, normalize contact html by including email component contents for consistency">
+      <option name="closed" value="true" />
+      <created>1779420932509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779420932509</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adding authorization and preparing for newsletter workflow.">
+      <option name="closed" value="true" />
+      <created>1779424709308</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779424709308</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Incremental - MVC, compartmentalization, and pathing improvements.">
+      <option name="closed" value="true" />
+      <created>1779581648705</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779581648705</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Incremental - debugging mock auth">
+      <option name="closed" value="true" />
+      <created>1779626826269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779626826269</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Incremental - AuthMock set selector added, not working">
+      <option name="closed" value="true" />
+      <created>1779627320710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779627320710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Incremental - first backup content">
+      <option name="closed" value="true" />
+      <created>1779637628325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779637628325</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Incremental, functionally working - refactor configs next">
+      <option name="closed" value="true" />
+      <created>1779644498927</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779644498927</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Incremental, functionally working, configs refactor complete.">
+      <option name="closed" value="true" />
+      <created>1779647446571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779647446571</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Incremental, page content and format improvements">
+      <option name="closed" value="true" />
+      <created>1779884417529</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779884417529</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Incremental, page content and format improvements.">
+      <option name="closed" value="true" />
+      <created>1779899131814</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779899131814</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Incremental email subscriptions notification feature">
+      <option name="closed" value="true" />
+      <created>1779971019844</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779971019844</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Incremental - Improved content.">
+      <option name="closed" value="true" />
+      <created>1779972518064</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779972518064</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Incremental - Improved content, email data structure bugfixes.">
+      <option name="closed" value="true" />
+      <created>1779973898751</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1779973898751</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Incremental - Newsletter draft updates">
+      <option name="closed" value="true" />
+      <created>1779980931421</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1779980931421</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Incremental - Newsletter draft updates">
+      <option name="closed" value="true" />
+      <created>1780000208267</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780000208267</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Incremental - Newsletter draft updates">
+      <option name="closed" value="true" />
+      <created>1780029045576</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780029045576</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Incremental - Newsletter draft updates">
+      <option name="closed" value="true" />
+      <created>1780248359100</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780248359100</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Incremental - cleanup and integrations">
+      <option name="closed" value="true" />
+      <created>1780278287158</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1780278287158</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Incremental - cleanup and integrations, bug in email tests">
+      <option name="closed" value="true" />
+      <created>1780504389746</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1780504389746</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Incremental - cleanup and integrations, test cases dynamic">
+      <option name="closed" value="true" />
+      <created>1780536560817</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1780536560817</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Incremental - cleanup and integrations final draft.">
+      <option name="closed" value="true" />
+      <created>1780576328624</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1780576328624</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Incremental - cleanup and integrations final draft.">
+      <option name="closed" value="true" />
+      <created>1780616051780</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1780616051780</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Incremental - debug form rendering">
+      <option name="closed" value="true" />
+      <created>1780687900644</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1780687900644</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Incremental - Refactor separate subscribe from contact complete.">
+      <option name="closed" value="true" />
+      <created>1780691893683</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1780691893683</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Incremental - Refactor separate subscribe from contact complete.">
+      <option name="closed" value="true" />
+      <created>1780692725328</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1780692725328</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Incremental - configuration, terminology updates">
+      <option name="closed" value="true" />
+      <created>1780695437684</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1780695437684</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Incremental, integration prep">
+      <option name="closed" value="true" />
+      <created>1780707699222</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1780707699222</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Incremental, integration prep">
+      <option name="closed" value="true" />
+      <created>1780714068785</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1780714068785</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Incremental, integration start: redis and mongo">
+      <option name="closed" value="true" />
+      <created>1780716056967</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1780716056967</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Final MVP cleanup, disabling features.">
+      <option name="closed" value="true" />
+      <created>1780767931853</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1780767931853</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Serverless first deployment, incremental start.">
+      <option name="closed" value="true" />
+      <created>1780786192932</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1780786192932</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Serverless first deployment, incremental start.">
+      <option name="closed" value="true" />
+      <created>1780786971737</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1780786971737</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Serverless first deployment, incremental start.">
+      <option name="closed" value="true" />
+      <created>1780792509898</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1780792509898</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="robots.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev/features/serverless" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding authorization and preparing for newsletter workflow." />
+    <MESSAGE value="Incremental - MVC, compartmentalization, and pathing improvements." />
+    <MESSAGE value="Incremental - debugging mock auth" />
+    <MESSAGE value="Incremental - AuthMock set selector added, not working" />
+    <MESSAGE value="Incremental - first backup content" />
+    <MESSAGE value="Incremental, functionally working - refactor configs next" />
+    <MESSAGE value="Incremental, functionally working, configs refactor complete." />
+    <MESSAGE value="Incremental, page content and format improvements" />
+    <MESSAGE value="Incremental, page content and format improvements." />
+    <MESSAGE value="Incremental email subscriptions notification feature" />
+    <MESSAGE value="Incremental - Improved content." />
+    <MESSAGE value="Incremental - Improved content, email data structure bugfixes." />
+    <MESSAGE value="Incremental - Newsletter draft updates" />
+    <MESSAGE value="Incremental - cleanup and integrations" />
+    <MESSAGE value="Incremental - cleanup and integrations, bug in email tests" />
+    <MESSAGE value="Incremental - cleanup and integrations, test cases dynamic" />
+    <MESSAGE value="Incremental - cleanup and integrations final draft." />
+    <MESSAGE value="Incremental - debug form rendering" />
+    <MESSAGE value="Incremental - Refactor separate subscribe from contact complete." />
+    <MESSAGE value="Incremental - configuration, terminology updates" />
+    <MESSAGE value="Incremental, integration prep" />
+    <MESSAGE value="Incremental, integration start: redis and mongo" />
+    <MESSAGE value="Final MVP cleanup, disabling features." />
+    <MESSAGE value="Serverless first deployment, incremental start." />
+    <MESSAGE value="Initial content commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial content commit" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+</project>
