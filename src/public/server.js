@@ -1,6 +1,5 @@
 import express from 'express';
 import helmet from 'helmet';
-import morgan from 'morgan';
 
 import path from 'path';
 
@@ -43,7 +42,7 @@ app.use((req, res) => {
 });
 
 // --- Generic error handler ------------------------------------------------
-app.use(async (err, req, res, next) => {
+app.use(async (err, req, res) => {
     // 1. Log the error locally
     logger.error({ err, path: req.path, method: req.method }, 'Unhandled Server Error');
 
