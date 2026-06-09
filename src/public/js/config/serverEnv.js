@@ -28,7 +28,7 @@ export const SERVER_CONFIG = {
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
     // Security
-    NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "ZacVohs-Consulting@pm.me",
+    NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "BaselineLogicSystems@pm.me",
     RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW, 10) || 15 * 60 * 1000, // 15 mins
     RATE_LIMIT_MAX: parseInt(process.env.RATE_LIMIT_MAX, 10) || 100,
 
