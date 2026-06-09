@@ -38,7 +38,7 @@ export const SERVER_CONFIG = {
         ENABLE_ANALYTICS_GOOGLE: getEnvBool('ENABLE_ANALYTICS_GOOGLE', false),
         ENABLE_BOOK_PREORDER: getEnvBool('ENABLE_BOOK_PREORDER', false),
         ENABLE_ADMIN_NOTIFICATIONS: getEnvBool('ENABLE_ADMIN_NOTIFICATIONS', false),
-        ENABLE_DB_LOCAL: getEnvBool('ENABLE_DB_LOCAL', true),
+        ENABLE_DB_LOCAL: getEnvBool('ENABLE_DB_LOCAL', false),
         ENABLE_DB_MONGO: getEnvBool('ENABLE_DB_MONGO', false),
         ENABLE_DB_REDIS: getEnvBool('ENABLE_DB_REDIS', false),
         ENABLE_OAUTH: getEnvBool('ENABLE_OAUTH', false),

@@ -65,8 +65,8 @@ async function startServer() {
     try {
         logger.debug (`Starting server with env: ${SERVER_CONFIG.ENVIRON_NAME}`)
 
-        if (SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
-            logger.info(`🚀 Starting app in command mode! http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
+        if (SERVER_CONFIG.ENVIRON_NAME === 'production' || SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
+            logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}/`);
         } else {
             app.listen(SERVER_CONFIG.PORT, () => {
                 logger.info(`Server running at http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
