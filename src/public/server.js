@@ -17,7 +17,6 @@ const app = express();
 
 // --- Security & logging ---
 app.use(helmet());
-app.use(morgan(`dev`));
 app.use(express.json());
 
 // Inject Analytics before serving static files or routes

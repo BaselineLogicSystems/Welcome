@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="Initial content commit">
+    <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="Deployment configuration.">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/config/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/client/contactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/client/contactPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/client/subscribePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/client/subscribePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/config/clientConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/config/clientConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/pages/disclaimer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/pages/disclaimer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/pages/error404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/pages/error404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/js/emailApi.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/emailApi.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/js/server.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/js/server.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,23 +80,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000024680178" />
-      <entry key="S2" value="1.007048343740156" />
-      <entry key="S5" value="1.1377954350804236" />
-      <entry key="S10" value="1.3712088271111407" />
-      <entry key="S30" value="1.7279599514924873" />
-      <entry key="S60" value="1.9664082528891664" />
-      <entry key="M2" value="2.5685752231554106" />
-      <entry key="M5" value="16.001653141675497" />
-      <entry key="M10" value="72.59044063096836" />
-      <entry key="M15" value="125.5826415340187" />
-      <entry key="M30" value="224.0558230494617" />
-      <entry key="H1" value="331.6493324419541" />
-      <entry key="H2" value="484.4237974380802" />
-      <entry key="H4" value="776.8204924869289" />
-      <entry key="D1" value="5919.753604777573" />
-      <entry key="W1" value="20147.37112992623" />
+      <entry key="MS100" value="1.0037994333883293" />
+      <entry key="MS500" value="1.3280528138374679" />
+      <entry key="S2" value="1.7674172634840217" />
+      <entry key="S5" value="2.313640579952649" />
+      <entry key="S10" value="3.3895374572799915" />
+      <entry key="S30" value="5.396545957123627" />
+      <entry key="S60" value="6.555916567491505" />
+      <entry key="M2" value="7.800421229663052" />
+      <entry key="M5" value="18.972979460120097" />
+      <entry key="M10" value="70.22316088656922" />
+      <entry key="M15" value="121.58796496264931" />
+      <entry key="M30" value="221.05319151967788" />
+      <entry key="H1" value="331.17073689576824" />
+      <entry key="H2" value="485.9349983634065" />
+      <entry key="H4" value="779.4097139653467" />
+      <entry key="D1" value="5921.143093798069" />
+      <entry key="W1" value="20151.64242971243" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -113,37 +104,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="2.415307822925985E-215" />
-      <entry key="S60" value="4.914578133396549E-108" />
-      <entry key="M2" value="2.21688478126322E-54" />
-      <entry key="M5" value="3.453800506042902E-22" />
-      <entry key="M10" value="1.858440560084687E-11" />
-      <entry key="M15" value="7.016440461216796E-8" />
-      <entry key="M30" value="2.687364513637811E-4" />
-      <entry key="H1" value="0.021102390470623428" />
-      <entry key="H2" value="0.3183886156461456" />
-      <entry key="H4" value="1.7044612142036935" />
-      <entry key="D1" value="12.606992423460659" />
-      <entry key="W1" value="28.804695735755317" />
+      <entry key="S30" value="1.5744724305140874E-216" />
+      <entry key="S60" value="1.254779833482378E-108" />
+      <entry key="M2" value="1.1201695556844771E-54" />
+      <entry key="M5" value="2.6285334375225673E-22" />
+      <entry key="M10" value="1.6212754403443283E-11" />
+      <entry key="M15" value="6.406029437760983E-8" />
+      <entry key="M30" value="2.567808433747827E-4" />
+      <entry key="H1" value="0.020627646311092037" />
+      <entry key="H2" value="0.31478682074672987" />
+      <entry key="H4" value="1.6947928708282651" />
+      <entry key="D1" value="12.595045557585815" />
+      <entry key="W1" value="28.80079466168658" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9265880618903709" />
-      <entry key="MS500" value="0.9848664453127774" />
-      <entry key="S2" value="1.0032067454038922" />
-      <entry key="S5" value="1.1359854335493929" />
-      <entry key="S10" value="1.3700609030135118" />
-      <entry key="S30" value="1.7274540658221973" />
-      <entry key="S60" value="1.9661076244646647" />
-      <entry key="M2" value="2.5683311243605247" />
-      <entry key="M5" value="16.001243163715692" />
-      <entry key="M10" value="72.58973009637423" />
-      <entry key="M15" value="125.58186062741247" />
-      <entry key="M30" value="224.0553817024628" />
-      <entry key="H1" value="331.66975740379644" />
-      <entry key="H2" value="484.74134004962445" />
-      <entry key="H4" value="778.5237409405319" />
-      <entry key="D1" value="5932.358310566384" />
-      <entry key="W1" value="20176.17478332463" />
+      <entry key="MS100" value="0.9831158352694487" />
+      <entry key="MS500" value="1.3220884901738406" />
+      <entry key="S2" value="1.7650649113080168" />
+      <entry key="S5" value="2.3093070983784045" />
+      <entry key="S10" value="3.383604561061643" />
+      <entry key="S30" value="5.392401615036044" />
+      <entry key="S60" value="6.553361181939271" />
+      <entry key="M2" value="7.798936429662008" />
+      <entry key="M5" value="18.972091188920146" />
+      <entry key="M10" value="70.22224741258857" />
+      <entry key="M15" value="121.58705501475039" />
+      <entry key="M30" value="221.05267069684652" />
+      <entry key="H1" value="331.1906526422452" />
+      <entry key="H2" value="486.24892385568614" />
+      <entry key="H4" value="781.1032884975879" />
+      <entry key="D1" value="5933.735852810341" />
+      <entry key="W1" value="20180.442181881095" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -540,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781023296509</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781042936813</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1781042936813</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding authorization and preparing for newsletter workflow." />
     <MESSAGE value="Incremental - MVC, compartmentalization, and pathing improvements." />
     <MESSAGE value="Incremental - debugging mock auth" />
     <MESSAGE value="Incremental - AuthMock set selector added, not working" />
@@ -598,7 +596,8 @@
     <MESSAGE value="Final MVP cleanup, disabling features." />
     <MESSAGE value="Serverless first deployment, incremental start." />
     <MESSAGE value="Initial content commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial content commit" />
+    <MESSAGE value="Deployment configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment configuration." />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
