@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="Deployment configuration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -553,7 +552,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781044880802</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781046574823</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1781046574823</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
