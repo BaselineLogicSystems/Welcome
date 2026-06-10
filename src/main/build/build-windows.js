@@ -11,7 +11,7 @@ const outDir    = path.join(__dirname, '..', '..', '..', 'public');
 execSync(`if not exist ${outDir} mkdir ${outDir}`, { stdio: 'inherit' });
 
 execSync(
-  `cpy "${srcDir}\\public\\**\\*" ${outDir}\\ && \
-   cpy "${rootDir}\\.env.*" ${outDir}\\config\\`,
-  { stdio: 'inherit' }
+    `cpy "${srcDir}\\public\\**\\*" ${outDir}\\ && \
+   cpy "${rootDir}\\src\\main\\configEnv\\.env.*" ${outDir}\\config\\`,
+    { stdio: 'inherit' }
 );

@@ -14,6 +14,6 @@ execSync(`mkdir -p ${outDir}`, { stdio: 'inherit' });        // delete output fo
 // copy only the files to be published
 execSync(
   `cp -r "${srcDir}/public/**/*" "${outDir}/" && \
-   cp -r "${rootDir}/.env.*" "${outDir}/config/"`,
+   cp -r "${rootDir}/src/main/configEnv/.env.*" "${outDir}/config/"`,
   { stdio: 'inherit' }
 );
