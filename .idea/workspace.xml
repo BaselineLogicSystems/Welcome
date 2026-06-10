@@ -4,88 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="Initial content commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/BaselineLogicSystems.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Welcome.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/build-static.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/build-unix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/build-windows.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/clean-unix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/clean-windows.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/clean.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/build/devServe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.development" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/configEnv/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/components/emailUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/config/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/config/siteseo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/content/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/banner0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyBusowner1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyChecklight1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyProfessional1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/gen/EasyWorkspace1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/gen/gen-3211.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/contactUi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribeApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/client/subscribeUi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/components/authServer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/config/clientConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/config/serverConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/contactEmail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/controllers/contact.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/controllers/subscribe.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutMain.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/layout/layoutNav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/analytics.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/convertkit.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/login.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/nodemailer.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/middleware/rateLimiter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/services/contact.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/js/services/subscribe.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/components/emailContact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/components/emailSubscribe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/disclaimer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/error404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/pages/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/routes/api.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/routes/web.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/schemas/contact.schema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/schemas/subscribe.schema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/sitemap.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/js/emailApi.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/js/server.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test-runner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+    <list default="true" id="f7ce437f-d87a-49b0-9e0e-43d922ede021" name="Changes" comment="test push config">
+      <change beforePath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/config/serverEnv.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="87" />
+    <option name="cachedIndexableFilesCount" value="81" />
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="dev/refactor/mvc" />
@@ -109,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/features/serverless" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,45 +55,45 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/zacvohs/zv.ui.weblanding.git&quot;,
-    &quot;accountId&quot;: &quot;31b32ef3-7fd2-4219-96a9-d197197c5a26&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/BaselineLogicSystems/Welcome.git",
+    "accountId": "31b32ef3-7fd2-4219-96a9-d197197c5a26"
   },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;zacvohs&quot;,
-    &quot;repository&quot;: &quot;zv.ui.weblanding&quot;
+    "owner": "zacvohs",
+    "repository": "zv.ui.weblanding"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0011566155862304" />
-      <entry key="MS500" value="1.4066875618093273" />
-      <entry key="S2" value="2.411629747267922" />
-      <entry key="S5" value="3.2184070233816837" />
-      <entry key="S10" value="3.8620452260660043" />
-      <entry key="S30" value="4.86544573775007" />
-      <entry key="S60" value="5.567214954301509" />
-      <entry key="M2" value="6.148475640852036" />
-      <entry key="M5" value="6.630956143309169" />
-      <entry key="M10" value="8.542139682841118" />
-      <entry key="M15" value="16.31444190488711" />
-      <entry key="M30" value="61.1282039352666" />
-      <entry key="H1" value="146.62106068281207" />
-      <entry key="H2" value="278.7990392909356" />
-      <entry key="H4" value="569.25383515203" />
-      <entry key="D1" value="5859.509159203606" />
-      <entry key="W1" value="19900.6867210601" />
+      <entry key="MS100" value="1.1374160390641481" />
+      <entry key="MS500" value="2.0985837575106534" />
+      <entry key="S2" value="4.172631025790003" />
+      <entry key="S5" value="7.947075801841687" />
+      <entry key="S10" value="10.950094995964312" />
+      <entry key="S30" value="14.023119532418455" />
+      <entry key="S60" value="15.199482371300642" />
+      <entry key="M2" value="16.448036534806036" />
+      <entry key="M5" value="18.07165976727963" />
+      <entry key="M10" value="19.469945053599236" />
+      <entry key="M15" value="23.162538404573258" />
+      <entry key="M30" value="57.23447816793414" />
+      <entry key="H1" value="156.42168125787404" />
+      <entry key="H2" value="333.3517645370196" />
+      <entry key="H4" value="647.3612891194207" />
+      <entry key="D1" value="5726.879524910487" />
+      <entry key="W1" value="20071.902851933573" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -181,37 +101,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="4.183530359642143E-136" />
-      <entry key="S60" value="2.045368025476615E-68" />
-      <entry key="M2" value="1.4301636359090523E-34" />
-      <entry key="M5" value="2.898373114482798E-14" />
-      <entry key="M10" value="1.7024610990137607E-7" />
-      <entry key="M15" value="3.0718678279300055E-5" />
-      <entry key="M30" value="0.005623017286935997" />
-      <entry key="H1" value="0.09652794824164847" />
-      <entry key="H2" value="0.6809547298467931" />
-      <entry key="H4" value="2.4926854471263917" />
-      <entry key="D1" value="13.431511378956364" />
-      <entry key="W1" value="29.06656939046102" />
+      <entry key="S30" value="3.4194046138217533E-265" />
+      <entry key="S60" value="5.847567540286902E-133" />
+      <entry key="M2" value="7.646938956397406E-67" />
+      <entry key="M5" value="3.575979737815947E-27" />
+      <entry key="M10" value="5.979950313983427E-14" />
+      <entry key="M15" value="1.529265101389349E-9" />
+      <entry key="M30" value="3.967432483544616E-5" />
+      <entry key="H1" value="0.008108175459384165" />
+      <entry key="H2" value="0.19735733512341763" />
+      <entry key="H4" value="1.3419458572670033" />
+      <entry key="D1" value="12.11442494597812" />
+      <entry key="W1" value="28.641161251011283" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.6835095241660557" />
-      <entry key="MS500" value="1.279996808503484" />
-      <entry key="S2" value="2.348156116496338" />
-      <entry key="S5" value="3.1847490872803967" />
-      <entry key="S10" value="3.842064083062245" />
-      <entry key="S30" value="4.855669011968745" />
-      <entry key="S60" value="5.560617445916507" />
-      <entry key="M2" value="6.144395691933706" />
-      <entry key="M5" value="6.629061066901518" />
-      <entry key="M10" value="8.541104225565979" />
-      <entry key="M15" value="16.313642393598347" />
-      <entry key="M30" value="61.13295716819173" />
-      <entry key="H1" value="146.71657346660402" />
-      <entry key="H2" value="279.47876780010955" />
-      <entry key="H4" value="571.744967477711" />
-      <entry key="D1" value="5872.9382637149865" />
-      <entry key="W1" value="19929.752242669027" />
+      <entry key="MS100" value="1.0595774662576054" />
+      <entry key="MS500" value="2.0672965126836593" />
+      <entry key="S2" value="4.156972003083343" />
+      <entry key="S5" value="7.934986095564902" />
+      <entry key="S10" value="10.941658660912944" />
+      <entry key="S30" value="14.019479897683532" />
+      <entry key="S60" value="15.197522589081215" />
+      <entry key="M2" value="16.4470047961028" />
+      <entry key="M5" value="18.07122547681935" />
+      <entry key="M10" value="19.469699418385805" />
+      <entry key="M15" value="23.16231745150492" />
+      <entry key="M30" value="57.23422979616826" />
+      <entry key="H1" value="156.42938234670558" />
+      <entry key="H2" value="333.548500690776" />
+      <entry key="H4" value="648.702224102581" />
+      <entry key="D1" value="5738.991741960625" />
+      <entry key="W1" value="20100.54297521659" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -229,32 +149,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/zvohs/ZacVohs/Baseline-Logic-Systems/Welcome/src/public/js/config&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.ci.executor&quot;: &quot;Run&quot;,
-    &quot;npm.install express-rate-limit.executor&quot;: &quot;Run&quot;,
-    &quot;npm.install mongoose redis.executor&quot;: &quot;Run&quot;,
-    &quot;npm.install pino pino-pretty.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "dev/deploy/v1.0",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/zvohs/ZacVohs/BaselineLogicSystems/Welcome",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.ci.executor": "Run",
+    "npm.install express-rate-limit.executor": "Run",
+    "npm.install mongoose redis.executor": "Run",
+    "npm.install pino pino-pretty.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\zvohs\ZacVohs\Baseline-Logic-Systems\Welcome\src\public\js\config" />
@@ -600,7 +520,55 @@
       <option name="project" value="LOCAL" />
       <updated>1780792509898</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Initial content commit">
+      <option name="closed" value="true" />
+      <created>1781023296509</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1781023296509</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781042936813</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1781042936813</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781044046645</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1781044046645</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781044880802</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1781044880802</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Deployment configuration.">
+      <option name="closed" value="true" />
+      <created>1781046574823</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1781046574823</updated>
+    </task>
+    <task id="LOCAL-00042" summary="test push config">
+      <option name="closed" value="true" />
+      <created>1781047545141</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1781047545141</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,8 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding authorization and preparing for newsletter workflow." />
-    <MESSAGE value="Incremental - MVC, compartmentalization, and pathing improvements." />
     <MESSAGE value="Incremental - debugging mock auth" />
     <MESSAGE value="Incremental - AuthMock set selector added, not working" />
     <MESSAGE value="Incremental - first backup content" />
@@ -658,7 +624,9 @@
     <MESSAGE value="Final MVP cleanup, disabling features." />
     <MESSAGE value="Serverless first deployment, incremental start." />
     <MESSAGE value="Initial content commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial content commit" />
+    <MESSAGE value="Deployment configuration." />
+    <MESSAGE value="test push config" />
+    <option name="LAST_COMMIT_MESSAGE" value="test push config" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

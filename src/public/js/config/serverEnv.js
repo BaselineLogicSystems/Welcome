@@ -19,7 +19,7 @@ const getEnvBool = (key, defaultValue) => {
 };
 
 export const SERVER_CONFIG = {
-    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/WebLanding',
+    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/Welcome',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
     ROOT_DIR: __dirname,
@@ -28,7 +28,7 @@ export const SERVER_CONFIG = {
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
     // Security
-    NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "ZacVohs-Consulting@pm.me",
+    NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "BaselineLogicSystems@pm.me",
     RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW, 10) || 15 * 60 * 1000, // 15 mins
     RATE_LIMIT_MAX: parseInt(process.env.RATE_LIMIT_MAX, 10) || 100,
 
@@ -38,7 +38,7 @@ export const SERVER_CONFIG = {
         ENABLE_ANALYTICS_GOOGLE: getEnvBool('ENABLE_ANALYTICS_GOOGLE', false),
         ENABLE_BOOK_PREORDER: getEnvBool('ENABLE_BOOK_PREORDER', false),
         ENABLE_ADMIN_NOTIFICATIONS: getEnvBool('ENABLE_ADMIN_NOTIFICATIONS', false),
-        ENABLE_DB_LOCAL: getEnvBool('ENABLE_DB_LOCAL', true),
+        ENABLE_DB_LOCAL: getEnvBool('ENABLE_DB_LOCAL', false),
         ENABLE_DB_MONGO: getEnvBool('ENABLE_DB_MONGO', false),
         ENABLE_DB_REDIS: getEnvBool('ENABLE_DB_REDIS', false),
         ENABLE_OAUTH: getEnvBool('ENABLE_OAUTH', false),

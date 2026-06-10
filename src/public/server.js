@@ -1,6 +1,5 @@
 import express from 'express';
 import helmet from 'helmet';
-import morgan from 'morgan';
 
 import path from 'path';
 
@@ -17,7 +16,6 @@ const app = express();
 
 // --- Security & logging ---
 app.use(helmet());
-app.use(morgan(`dev`));
 app.use(express.json());
 
 // Inject Analytics before serving static files or routes
@@ -44,7 +42,7 @@ app.use((req, res) => {
 });
 
 // --- Generic error handler ------------------------------------------------
-app.use(async (err, req, res, next) => {
+app.use(async (err, req, res) => {
     // 1. Log the error locally
     logger.error({ err, path: req.path, method: req.method }, 'Unhandled Server Error');
 
@@ -66,8 +64,8 @@ async function startServer() {
     try {
         logger.debug (`Starting server with env: ${SERVER_CONFIG.ENVIRON_NAME}`)
 
-        if (SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
-            logger.info(`🚀 Starting app in command mode! http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
+        if (SERVER_CONFIG.ENVIRON_NAME === 'production' || SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
+            logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}/`);
         } else {
             app.listen(SERVER_CONFIG.PORT, () => {
                 logger.info(`Server running at http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
