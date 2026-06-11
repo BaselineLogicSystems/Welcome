@@ -1,11 +1,18 @@
+
 // build.js
 import { execSync } from 'child_process';
 import path from 'path';
-import fs from 'fs/promises';
+import fs from 'fs-extra'; // Use fs-extra for everything
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.join(__dirname, '..', '..', '..');
+const srcDir = path.join(rootDir, 'src');
+const outDir = path.join(rootDir, 'public');
 
 // Helper: read config.json
 async function readConfigFile() {
-  const configPath = path.join('public', 'config', 'config.json');
+  const configPath = path.join(outDir, 'config', 'config.json');
   try {
     const data = await fs.readFile(configPath, 'utf8');
     return JSON.parse(data);
@@ -14,22 +21,37 @@ async function readConfigFile() {
   }
 }
 
-import os from 'os';
-
 async function run() {
+  try {
+    // 1. Unified OS-independent copy
+    console.log('📦 Preparing public directory...');
+    await fs.ensureDir(outDir);
+    await fs.ensureDir(path.join(outDir, 'config'));
 
-  const cfg = await readConfigFile();
+    // Copy public assets from src/public to /public
+    await fs.copy(path.join(srcDir, 'public'), outDir);
 
-  const platform = os.platform(); // 'win32', 'darwin', 'linux', etc.
-  const helper = platform.startsWith('win') ? './src/main/build/build-windows.js' : './src/main/build/build-unix.js';
+    // Copy env files to config directory
+    const files = await fs.readdir(rootDir);
+    const envFiles = files.filter(f => f.startsWith('.env'));
+    for (const file of envFiles) {
+      await fs.copy(path.join(rootDir, file), path.join(outDir, 'config', file));
+    }
 
-  execSync(`node ${helper}`, { stdio: 'inherit' });
+    // 2. Handle Static Build if enabled in config
+    const cfg = await readConfigFile();
+    if (cfg.app?.buildStatic) {
+      console.log('🚀 Running static build...');
+      execSync(`node ./src/main/build/build-static.js`, { stdio: 'inherit' });
+    } else {
+      console.log('Static build skipped – buildStatic flag is false');
+    }
 
-  if (!cfg.app?.buildStatic) {
-    console.log('Static build skipped – buildStatic flag is false');
-    return;
+    console.log('✅ Build finished successfully');
+  } catch (err) {
+    console.error('❌ Critical build failure:', err);
+    process.exit(1);
   }
-  execSync(`node ./src/main/build/build-static.js`, { stdio: 'inherit' });
 }
 
 run();

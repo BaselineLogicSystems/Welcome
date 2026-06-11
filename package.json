@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node src/main/build/build.js && npm test",
+    "build": "node src/main/build/build.js",
     "dev:serve": "cross-env PORT=8018 node public/server.js",
-    "dev": "npm run build && npm run dev:serve",
+    "dev": "npm run build && npm test && npm run dev:serve",
     "audit": "npm audit --audit-level moderate",
     "audit:prod": "npm audit --production --audit-level high",
     "lint": "eslint . --ext .js,.jsx",
