@@ -10,7 +10,7 @@
     "dev": "cross-env PORT=8018 NODE_ENV=dev node api/server.js",
     "lint": "eslint . --ext .js,.jsx",
     "test": "cross-env NODE_ENV=testrunner node ../test/test-runner.js",
-    "start": "cross-env CONTEXT_ROOT=/Welcome NODE_ENV=production node api/server.js"
+    "start": "cross-env NODE_ENV=production node api/server.js"
   },
   "dependencies": {
     "express": "^5.2.1",
