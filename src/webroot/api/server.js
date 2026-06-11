@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 
 import {logger} from './middleware/logger.js';
-import {SERVER_CONFIG} from './config/ServerEnv.js';
+import {SERVER_CONFIG} from './config/serverEnv.js';
 
 import apiRoutes from './routes/api.routes.js';
 import webRoutes from './routes/web.routes.js';
