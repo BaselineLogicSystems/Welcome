@@ -1,5 +1,5 @@
 
-import { SubscribeSchema } from '../../schemas/subscribe.schema.js';
+import { SubscribeSchema } from '../schemas/subscribe.schema.js';
 import { SubscribeService } from '../services/subscribe.service.js';
 import { logger } from '../middleware/logger.js';
 

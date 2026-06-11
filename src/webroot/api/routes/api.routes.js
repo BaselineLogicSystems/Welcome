@@ -2,12 +2,12 @@
 import express from 'express';
 import { body } from 'express-validator';
 
-import { ROLES } from '../js/components/authServer.js';
-import { SERVER_CONFIG } from '../js/config/serverEnv.js';
-import { authorize } from '../js/middleware/login.middleware.js';
+import { ROLES } from '../config/authServer.js';
+import { SERVER_CONFIG } from '../config/serverEnv.js';
+import { authorize } from '../middleware/login.middleware.js';
 
-import * as contactController from '../js/controllers/contact.controller.js';
-import * as emailController from '../js/controllers/subscribe.controller.js';
+import * as contactController from '../controllers/contact.controller.js';
+import * as emailController from '../controllers/subscribe.controller.js';
 
 const router = express.Router();
 

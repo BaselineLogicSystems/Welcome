@@ -1,6 +1,6 @@
 // src/assets/js/layoutFooter.js
 
-import { AuthMock } from '../components/authServer.js';
+import { AuthMock } from '../config/clientAuth.js';
 
 export async function initFooter(config, siteseo) {
 

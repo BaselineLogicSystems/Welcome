@@ -1,10 +1,5 @@
 // src/assets/js/clientConfig.js
 
-
-// Deprecated???
-// TODO: Merge or add cache lookup for config
-
-
 /**
  * Loads config.json and merges it with an environment‑specific file.
  * Caches the merged result so only one HTTP round‑trip happens per page load.
@@ -34,7 +29,7 @@ export async function loadConfig() {
   if (_cachedConfig) return _cachedConfig;
   if (_configPromise) return _configPromise;
 
-  const baseURL = '/Welcome/config/';
+  const baseURL = '/config/';
 
   _configPromise = (async () => {
     // Load base config.json
@@ -47,7 +42,7 @@ export async function loadConfig() {
 export async function loadSiteData() {
   if (_seoPromise) return _seoPromise;
 
-  const baseURL = '/Welcome/config/';
+  const baseURL = '/config/';
 
   _seoPromise = (async () => {
     // Load base config.json
@@ -66,7 +61,7 @@ export async function loadContent (fileName) {
   // TODO: prevent DOS at startup / minor performance hit for semaphores failure.
   // if (_configPromise) return _configPromise;
 
-  const baseURL = 'content/';
+  const baseURL = '/content/';
 
   _contentPromise = (async () => {
     // Load base config.json

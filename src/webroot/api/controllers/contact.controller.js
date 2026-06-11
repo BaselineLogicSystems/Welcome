@@ -1,5 +1,5 @@
 
-import { ContactSchema } from '../../schemas/contact.schema.js';
+import { ContactSchema } from '../schemas/contact.schema.js';
 import { ContactService } from '../services/contact.service.js';
 import { logger } from '../middleware/logger.js';
 
