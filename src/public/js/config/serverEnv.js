@@ -19,10 +19,10 @@ const getEnvBool = (key, defaultValue) => {
 };
 
 export const SERVER_CONFIG = {
-    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/Welcome',
+    CONTEXT_ROOT: process.env.CONTEXT_ROOT || '',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_DIR: path.join(process.cwd(), 'public'),
+    ROOT_DIR: process.cwd(),
 
     DATA_DIR: path.join(__dirname, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',

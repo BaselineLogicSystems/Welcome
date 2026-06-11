@@ -10,13 +10,14 @@ import { ROLES } from '../js/components/authServer.js';
 const router = express.Router();
 const errorPage = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', 'error404.html');
 
-router.get('/', (req, res) => {
-    res.redirect(301, `${SERVER_CONFIG.CONTEXT_ROOT}/`);
-});
+// router.get('/', (req, res) => {
+//     Todo: Avoid loop; next, if ${SERVER_CONFIG.CONTEXT_ROOT} == '';
+//     res.redirect(301, `${SERVER_CONFIG.CONTEXT_ROOT}/`);
+// });
 
-router.get('/favicon.ico', (req, res) => {
-    res.redirect(301, `${SERVER_CONFIG.CONTEXT_ROOT}/images/favicon.png`);
-});
+// router.get('/favicon.ico', (req, res) => {
+//     res.redirect(301, `${SERVER_CONFIG.CONTEXT_ROOT}/images/favicon.png`);
+// });
 
 router.get(`${SERVER_CONFIG.CONTEXT_ROOT}/{:page}`, authorize(ROLES.PUBLIC), async (req, res) => {
     const pageParam = req.params.page || 'index';
