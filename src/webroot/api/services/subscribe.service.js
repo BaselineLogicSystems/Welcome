@@ -1,8 +1,8 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+
 import { FILE_PATHS, SERVER_CONFIG } from '../config/serverEnv.js';
-import { ConvertKitService } from '../middleware/convertkit.service.js';
 import { logger } from "../middleware/logger.js";
 
 export const SubscribeService = {
@@ -65,12 +65,6 @@ export const SubscribeService = {
             } catch (err) {
                 logger.error ({ err: err }, "Failed to update email list!");
             }
-        }
-
-        try {
-            await ConvertKitService.addSubscriber(email, [`subscribe_${action}`]);
-        } catch (err) {
-            logger.error ({ err: err }, `ConvertKit sync failed`);
         }
 
         return email;
