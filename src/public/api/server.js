@@ -3,14 +3,13 @@ import helmet from 'helmet';
 
 import path from 'path';
 
-import { SERVER_CONFIG } from './js/config/ServerEnv.js';
-import { logger } from './js/middleware/logger.js';
-import { analyticsMiddleware } from './js/middleware/analytics.middleware.js';
-import { EmailService } from './js/middleware/nodemailer.service.js';
-import { rateLimiter } from './js/middleware/rateLimiter.js';
+import { SERVER_CONFIG } from '../js/config/ServerEnv.js';
+import { logger } from '../js/middleware/logger.js';
+import { analyticsMiddleware } from '../js/middleware/analytics.middleware.js';
+import { EmailService } from '../js/middleware/nodemailer.service.js';
 
-import apiRoutes from './routes/api.routes.js';
-import webRoutes from './routes/web.routes.js';
+import apiRoutes from '../routes/api.routes.js';
+import webRoutes from '../routes/web.routes.js';
 
 const app = express();
 
@@ -32,7 +31,7 @@ app.use((req, res, next) => {
 app.use(SERVER_CONFIG.CONTEXT_ROOT, express.static(SERVER_CONFIG.ROOT_DIR));
 
 // Routes
-app.use(apiRoutes, rateLimiter);  // Verify rate limits functionality?
+app.use(apiRoutes);
 app.use(webRoutes);
 
 // --- 404 handler ---
@@ -66,10 +65,12 @@ async function startServer() {
 
         if (SERVER_CONFIG.ENVIRON_NAME === 'production' || SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
             logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}/`);
-        } else {
+        } else if (SERVER_CONFIG.ENVIRON_NAME === 'dev' || SERVER_CONFIG.ENVIRON_NAME === 'test') {
             app.listen(SERVER_CONFIG.PORT, () => {
                 logger.info(`Server running at http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
             });
+        } else {
+            logger.info(`Warning: environment not specified.  Exposing the application to caller.`);
         }
     } catch (error) {
         logger.error(error, 'Critical failure during server startup');
