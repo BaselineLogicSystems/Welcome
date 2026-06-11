@@ -32,10 +32,11 @@ async function run() {
     await fs.copy(path.join(srcDir, 'public'), outDir);
 
     // Copy env files to config directory
-    const files = await fs.readdir(rootDir);
+    const envPath = path.join(srcDir, 'main', 'configEnv');
+    const files = await fs.readdir(envPath);
     const envFiles = files.filter(f => f.startsWith('.env'));
     for (const file of envFiles) {
-      await fs.copy(path.join(rootDir, file), path.join(outDir, 'config', file));
+      await fs.copy(path.join(envPath, file), path.join(outDir, 'config', file));
     }
 
     // 2. Handle Static Build if enabled in config
