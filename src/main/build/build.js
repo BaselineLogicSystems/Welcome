@@ -29,7 +29,21 @@ async function run() {
     await fs.ensureDir(path.join(outDir, 'config'));
 
     // Copy public assets from src/public to /public
-    await fs.copy(path.join(srcDir, 'public'), outDir);
+    // FILTER: Avoid copying the 'js' folder into public if it contains server logic
+    // We only copy it if you have a specific client-side JS directory,
+    // otherwise we filter it out and handle it separately.
+    await fs.copy(path.join(srcDir, 'public'), outDir, {
+      filter: (src) => !src.includes('/js/') // Prevent server-side JS from being publicly accessible
+    });
+
+    // --- SERVER BUNDLE: Copy logic to ROOT for Vercel execution ---
+    console.log('🛠️  Bundling server files to root...');
+
+    // --- VERCEL FIX: Copy server.js to root for Serverless Function execution ---
+    const sourceServer = path.join(srcDir, 'public', 'server.js');
+    const destServer = path.join(rootDir, 'server.js');
+    await fs.copy(sourceServer, destServer);
+    console.log('🚀 Entry point server.js copied to root');
 
     // Copy env files to config directory
     const envPath = path.join(srcDir, 'main', 'configEnv');
