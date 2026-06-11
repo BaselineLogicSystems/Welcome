@@ -2,9 +2,6 @@
 import express from 'express';
 import { body } from 'express-validator';
 
-import { ROLES } from '../config/authServer.js';
-import { authorize } from '../middleware/login.middleware.js';
-
 import * as contactController from '../controllers/contact.controller.js';
 import * as emailController from '../controllers/subscribe.controller.js';
 
@@ -22,7 +19,6 @@ router.post(`/api/contact`, [
 ], contactController.submitContactForm);
 
 router.get(`/api/emails`,
-    authorize(ROLES.MANAGER),
     emailController.getEmails
 );
 
