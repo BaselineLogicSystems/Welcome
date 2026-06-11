@@ -1,11 +1,13 @@
 
 {
   "version": 2,
-  "buildCommand": "npm install",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/api/server.js"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/server.js"
     }
   ]
 }

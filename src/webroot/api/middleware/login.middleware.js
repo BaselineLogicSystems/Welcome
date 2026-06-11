@@ -2,7 +2,7 @@
 import { createClient } from 'redis';
 import { logger } from "./logger.js";
 import { SERVER_CONFIG } from '../config/serverEnv.js';
-import { ROLES, ROLE_HIERARCHY, getRoleFromCookie } from "../components/authServer.js";
+import { ROLES, ROLE_HIERARCHY, getRoleFromCookie } from "../config/authServer.js";
 
 // Initialize Redis client lazily
 let redisClient = null;

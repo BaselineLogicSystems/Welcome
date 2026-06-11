@@ -3,22 +3,17 @@ import helmet from 'helmet';
 
 import path from 'path';
 
-import { SERVER_CONFIG } from '../public/js/config/ServerEnv.js';
-import { logger } from '../public/js/middleware/logger.js';
-import { analyticsMiddleware } from '../public/js/middleware/analytics.middleware.js';
-import { EmailService } from '../public/js/middleware/nodemailer.service.js';
+import {logger} from './middleware/logger.js';
+import {SERVER_CONFIG} from './config/ServerEnv.js';
 
-import apiRoutes from '../public/routes/api.routes.js';
-import webRoutes from '../public/routes/web.routes.js';
+import apiRoutes from './routes/api.routes.js';
+import webRoutes from './routes/web.routes.js';
 
 const app = express();
 
 // --- Security & logging ---
 app.use(helmet());
 app.use(express.json());
-
-// Inject Analytics before serving static files or routes
-app.use(analyticsMiddleware);
 
 // --- Context Middleware ---
 app.use((req, res, next) => {
@@ -44,14 +39,6 @@ app.use((req, res) => {
 app.use(async (err, req, res) => {
     // 1. Log the error locally
     logger.error({ err, path: req.path, method: req.method }, 'Unhandled Server Error');
-
-    // 2. Send admin alert if enabled
-    await EmailService.sendAdminAlert({
-        path: req.path,
-        method: req.method,
-        message: err.message,
-        stack: err.stack
-    });
 
     // 3. Serve the professional error page
     const errorPage = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', 'error.html');
