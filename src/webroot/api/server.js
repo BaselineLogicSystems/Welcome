@@ -1,5 +1,4 @@
 import express from 'express';
-import helmet from 'helmet';
 
 import path from 'path';
 
@@ -10,17 +9,7 @@ import apiRoutes from './routes/api.routes.js';
 import webRoutes from './routes/web.routes.js';
 
 const app = express();
-
-// --- Security & logging ---
-app.use(helmet());
 app.use(express.json());
-
-// --- Context Middleware ---
-app.use((req, res, next) => {
-    res.locals.context = SERVER_CONFIG.CONTEXT_ROOT;
-    res.locals.env = SERVER_CONFIG.ENVIRON_NAME;
-    next();
-});
 
 // Serve static files
 app.use(SERVER_CONFIG.CONTEXT_ROOT, express.static(SERVER_CONFIG.ROOT_DIR));
@@ -51,10 +40,10 @@ async function startServer() {
         logger.debug (`Starting server with env: ${SERVER_CONFIG.ENVIRON_NAME}`)
 
         if (SERVER_CONFIG.ENVIRON_NAME === 'production' || SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
-            logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}/`);
+            logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}`);
         } else if (SERVER_CONFIG.ENVIRON_NAME === 'dev' || SERVER_CONFIG.ENVIRON_NAME === 'test') {
             app.listen(SERVER_CONFIG.PORT, () => {
-                logger.info(`Server running at http://localhost:${SERVER_CONFIG.PORT}${SERVER_CONFIG.CONTEXT_ROOT}/`);
+                logger.info(`Server running at http://localhost:/`);
             });
         } else {
             logger.info(`Warning: environment not specified.  Exposing the application to caller.`);
