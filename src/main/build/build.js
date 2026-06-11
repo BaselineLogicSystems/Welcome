@@ -27,6 +27,7 @@ async function run() {
     console.log('📦 Preparing public directory...');
     await fs.ensureDir(outDir);
     await fs.ensureDir(path.join(outDir, 'config'));
+    await fs.ensureDir(path.join(rootDir, 'api',));
 
     // Copy public assets from src/public to /public
     // FILTER: Avoid copying the 'js' folder into public if it contains server logic
@@ -41,7 +42,7 @@ async function run() {
 
     // --- VERCEL FIX: Copy server.js to root for Serverless Function execution ---
     const sourceServer = path.join(srcDir, 'public', 'server.js');
-    const destServer = path.join(rootDir, 'server.js');
+    const destServer = path.join(rootDir, 'api', 'server.js');
     await fs.copy(sourceServer, destServer);
     console.log('🚀 Entry point server.js copied to root');
 

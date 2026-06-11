@@ -1,15 +1,13 @@
-
 {
   "version": 2,
-  "functions": {
-    "server.js": {
-      "includeFiles": "**/*"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(config|content|css|images|js|pages|routes|schemas)/(.*)",
-      "dest": "/$1/$2"
+      "source": "/(config|content|css|images|js|pages|routes|schemas)/(.*)",
+      "destination": "/$1/$2"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/server.js"
     }
   ]
 }
