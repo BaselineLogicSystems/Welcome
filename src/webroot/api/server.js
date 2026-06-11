@@ -3,13 +3,13 @@ import helmet from 'helmet';
 
 import path from 'path';
 
-import { SERVER_CONFIG } from '../js/config/ServerEnv.js';
-import { logger } from '../js/middleware/logger.js';
-import { analyticsMiddleware } from '../js/middleware/analytics.middleware.js';
-import { EmailService } from '../js/middleware/nodemailer.service.js';
+import { SERVER_CONFIG } from '../public/js/config/ServerEnv.js';
+import { logger } from '../public/js/middleware/logger.js';
+import { analyticsMiddleware } from '../public/js/middleware/analytics.middleware.js';
+import { EmailService } from '../public/js/middleware/nodemailer.service.js';
 
-import apiRoutes from '../routes/api.routes.js';
-import webRoutes from '../routes/web.routes.js';
+import apiRoutes from '../public/routes/api.routes.js';
+import webRoutes from '../public/routes/web.routes.js';
 
 const app = express();
 
