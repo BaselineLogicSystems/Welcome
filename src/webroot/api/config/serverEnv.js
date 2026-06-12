@@ -7,9 +7,9 @@ import { fileURLToPath } from 'url';
 
 dotenv.config();
 
-// Logic to ensure rootpath is always the project root
+// Logic to ensure projectRoot is always the project root
 const filepath = fileURLToPath(import.meta.url);
-const rootpath = path.join(path.dirname(filepath), '..', '..');
+const projectRoot = path.join(path.dirname(filepath), '..' ,'..');
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -24,9 +24,9 @@ export const SERVER_CONFIG = {
     CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_STATIC_DIR: process.env.ROOTPATH || path.join(process.cwd(), 'public'),
+    ROOT_STATIC_DIR: process.env.ROOTPATH || path.join(projectRoot, 'public'),
 
-    DATA_DIR: path.join(rootpath, 'data'),
+    DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
     // Security
