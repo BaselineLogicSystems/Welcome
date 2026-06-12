@@ -1,6 +1,11 @@
 
 {
   "version": 2,
+  "functions": {
+    "api/server.js": {
+      "includeFiles": "public/**/*"
+    }
+  },
   "routes": [
     {
       "handle": "filesystem"
