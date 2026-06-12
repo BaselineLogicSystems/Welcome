@@ -7,9 +7,9 @@ import { fileURLToPath } from 'url';
 
 dotenv.config();
 
-// Logic to ensure __dirname is always the project root
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.join(path.dirname(__filename), '..', '..');
+// Logic to ensure rootpath is always the project root
+const filepath = fileURLToPath(import.meta.url);
+const rootpath = path.join(path.dirname(filepath), '..', '..');
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -24,9 +24,9 @@ export const SERVER_CONFIG = {
     CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_DIR: process.env.ROOTPATH || path.join(process.cwd(), 'public'),
+    ROOT_STATIC_DIR: process.env.ROOTPATH || path.join(process.cwd(), 'public'),
 
-    DATA_DIR: path.join(__dirname, 'data'),
+    DATA_DIR: path.join(rootpath, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
     // Security
@@ -71,7 +71,7 @@ export const FILE_PATHS = {
     SUBSCRIBE_LIST: path.join(SERVER_CONFIG.DATA_DIR, 'subscribe.json'),
 };
 
-const configPath = path.join(SERVER_CONFIG.ROOT_DIR, 'config', 'config.json');
+const configPath = path.join(SERVER_CONFIG.ROOT_STATIC_DIR, 'config', 'config.json');
 
 async function readJSON(filePath) {
     try {
