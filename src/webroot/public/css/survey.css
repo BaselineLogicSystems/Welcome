@@ -1,0 +1,144 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+.survey-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 6px solid #d32f2f; /* Racing Red Accent */
+}
+
+h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+p.subtitle {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 30px;
+}
+.section {
+    margin-bottom: 25px;
+}
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+/* Rating System Styling */
+.rating-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+/* Layout for the rating row */
+.rating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.rating-label {
+    font-size: 0.9em;
+    color: #444;
+    font-weight: 600;
+}
+
+/* The Star Logic */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* This flips the visual order so 1 is on the left */
+    justify-content: flex-end;
+}
+
+.star-rating input {
+    display: none; /* Hide the actual radio circle */
+}
+
+.star-rating label {
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin: 0 2px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Change color of the hovered star and all stars to the left of it */
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #ffca08;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); /* Slightly deeper shadow when active */
+}
+
+/* Generic text input styling for consistency */
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    justify-content: flex-end;
+}
+.option {
+    text-align: center;
+}
+.option input {
+    display: block;
+    margin: 0 auto 5px auto;
+}
+/* Text area styling */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    resize: vertical;
+}
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: #b71c1c;
+}

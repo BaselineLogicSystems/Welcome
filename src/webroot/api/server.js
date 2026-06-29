@@ -41,9 +41,9 @@ async function startServer() {
 
         if (SERVER_CONFIG.ENVIRON_NAME === 'production' || SERVER_CONFIG.ENVIRON_NAME === 'testrunner') {
             logger.info(`Starting app in command mode!  Context Root: ${SERVER_CONFIG.CONTEXT_ROOT}`);
-        } else if (SERVER_CONFIG.ENVIRON_NAME === 'dev' || SERVER_CONFIG.ENVIRON_NAME === 'test') {
+        } else if (SERVER_CONFIG.ENVIRON_NAME === 'development' || SERVER_CONFIG.ENVIRON_NAME === 'test') {
             app.listen(SERVER_CONFIG.PORT, () => {
-                logger.info(`Server running at http://localhost:/`);
+                logger.info(`Server running at http://localhost:${SERVER_CONFIG.PORT}/`);
             });
         } else {
             logger.info(`Warning: environment not specified.  Exposing the application to caller.`);

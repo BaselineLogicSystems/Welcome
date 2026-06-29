@@ -1,6 +1,6 @@
 /backup/
-/static/
 /target/
+/src/main/configEnv/.env*
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
