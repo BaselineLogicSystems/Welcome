@@ -19,7 +19,7 @@ const ratingEntry = z.preprocess(
     z.coerce.number().int().min(1).max(5)
 );
 
-export const WelcomeSchemas = z.object({
+export const SurveySchema = z.object({
     customerName: z.string().max(8000).optional(),
     customerDate: z.string().max(8000).optional(),
     clarity: ratingEntry,

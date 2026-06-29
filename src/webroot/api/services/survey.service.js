@@ -1,6 +1,5 @@
 
 import { DataDbService } from './data.dbservice.js';
-import { EmailService } from '../middleware/nodemailer.service.js';
 import { SERVER_CONFIG } from '../config/serverEnv.js';
 
 let configured = false;
@@ -21,8 +20,6 @@ export const SurveyService = {
         }
 
         const savedData = await dataService.saveSurvey(surveyData);
-
-        await EmailService.sendSurveyAlert(savedData);
 
         return savedData;
     },

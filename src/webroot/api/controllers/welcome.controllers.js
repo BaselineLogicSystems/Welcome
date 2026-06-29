@@ -1,13 +1,14 @@
 
 import { logger } from '../middleware/logger.js';
 
-import { ContactSchema } from '../schemas/welcome.schemas.js';
+import { ContactSchema } from '../schemas/surveySchema.js';
 import { ContactService } from '../services/contact.service.js';
-import { SubscribeSchema } from '../schemas/welcome.schemas.js';
+import { SubscribeSchema } from '../schemas/surveySchema.js';
 import { SubscribeService } from '../services/subscribe.service.js';
-import { WelcomeSchemas } from '../schemas/welcome.schemas.js';
+import { SurveySchema } from '../schemas/surveySchema.js';
 import { SurveyService } from '../services/survey.service.js';
 
+import { EmailService } from '../middleware/nodemailer.service.js';
 
 // --- Contact Controllers ---
 export const submitContactForm = async (req, res) => {
@@ -67,7 +68,8 @@ export const manageEmails = async (req, res) => {
 // --- Survey Controllers ---
 export const submitSurvey = async (req, res) => {
     try {
-        const validatedData = WelcomeSchemas.parse(req.body);
+        logger.info ("Received survey submission");
+        const validatedData = SurveySchema.parse(req.body);
 
         const surveyPayload = {
             ...validatedData,
@@ -75,6 +77,9 @@ export const submitSurvey = async (req, res) => {
         };
 
         await SurveyService.submitSurvey(surveyPayload);
+
+        await EmailService.sendSurveyAlert(surveyPayload);
+
         res.status(201).json({ message: 'Survey submitted successfully' });
     } catch (err) {
         if (err.name === 'ZodError') {

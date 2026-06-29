@@ -62,8 +62,6 @@ export const EmailService = {
                 timeZoneName: 'longOffset'
             });
 
-
-
             const mailOptions = {
                 from: `"BLS: Survey Notice" <${SERVER_CONFIG.KEYS.SMTP_USER}>`,
                 to: SERVER_CONFIG.KEYS.SURVEY_RCPT,
