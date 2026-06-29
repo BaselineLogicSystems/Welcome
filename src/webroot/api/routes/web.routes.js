@@ -2,7 +2,7 @@
 import express from 'express';
 import path from 'path';
 
-import { readConfigFile, SERVER_CONFIG } from '../config/serverEnv.js';
+import { configJson, SERVER_CONFIG} from '../config/serverEnv.js';
 
 const router = express.Router();
 const errorPage = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', 'error404.html');
@@ -14,8 +14,7 @@ router.get('/favicon.ico', (req, res) => {
 router.get(`/{:page}`, async (req, res) => {
     const pageParam = req.params.page || 'index';
     const pageName = pageParam.replace(/\.html$/, '');
-    const config = await readConfigFile();
-    const pageCfg = config.app?.pages?.[pageName];
+    const pageCfg = configJson.app?.pages?.[pageName];
 
     if (!pageCfg || pageCfg.enabled === false) {
         return res.status(404).sendFile(errorPage);

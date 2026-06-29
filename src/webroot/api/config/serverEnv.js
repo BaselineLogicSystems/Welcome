@@ -107,3 +107,62 @@ export async function readConfigFile() {
     const baseCfg = await readJSON(configPath);
     return baseCfg || {};
 }
+
+export const configJson = {
+    "app": {
+        "buildStatic": false,
+        "contextRoot": "/Welcome",
+        "name": "Welcome",
+        "title": "Web Landing Page",
+        "image": {
+            "imageFile": "banner0.jpg",
+            "caption": "Welcome!  We're glad you're here!"
+        },
+        "copyright": {
+            "name": "Baseline Logic Systems, LLC",
+            "email": "ZacVohs-Consulting@pm.me"
+        },
+        "features": {
+            "authorizationFooter": false,
+            "calendarLocal": false,
+            "emailLocal": true,
+            "newsletterLocal": false,
+            "nodeMailerEnabled": false
+        },
+        "pages": {
+            "index": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "index",
+                "link": "index.html",
+                "title": "Home"
+            },
+            "book": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "book",
+                "link": "book.html",
+                "title": "Backup Book"
+            },
+            "disclaimer": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "disclaimer",
+                "link": "disclaimer.html",
+                "title": "Disclaimer and Privacy Policy"
+            },
+            "survey": {
+                "enabled": true,
+                "indexed": true,
+                "link": "survey.html",
+                "title": "Survey Questions"
+            },
+            "policy": {
+                "enabled": true,
+                "indexed": true,
+                "link": "policy.html",
+                "title": "Survey Policy"
+            }
+        }
+    }
+}
