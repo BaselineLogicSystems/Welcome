@@ -54,19 +54,11 @@ export const EmailService = {
         logger.info ("Mailing survey details");
 
         try {
-            const stringSurvey = JSON.stringify(surveyDetails);
-            logger.debug (`String Survey: ${stringSurvey}`);
-
-            const tzFormatter = new Intl.DateTimeFormat('en-US', {
-                timeZone: 'America/New_York',
-                timeZoneName: 'longOffset'
-            });
-
             const mailOptions = {
                 from: `"BLS: Survey Notice" <${SERVER_CONFIG.KEYS.SMTP_USER}>`,
                 to: SERVER_CONFIG.KEYS.SURVEY_RCPT,
                 subject: `🚨 Survey Result on: ${surveyDetails.createdAt}`,
-                text: `Survey result received.\n\nFrom: ${surveyDetails.customerName} on ${surveyDetails.customerDate}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths}\nImprovements: ${surveyDetails.improvements}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
+                text: `Survey result received.\n\nFrom: ${surveyDetails.customerName || "(empty)"} on ${surveyDetails.customerDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
             };
 
             const strOptions = JSON.stringify(mailOptions);

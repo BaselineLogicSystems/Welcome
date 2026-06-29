@@ -20,15 +20,15 @@ const ratingEntry = z.preprocess(
 );
 
 export const SurveySchema = z.object({
-    customerName: z.string().max(8000).optional(),
-    customerDate: z.string().max(8000).optional(),
+    customerName: z.string().max(80).optional(),
+    customerDate: z.string().max(20).optional(),
     clarity: ratingEntry,
     knowledge: ratingEntry,
     safety: ratingEntry,
     patience: ratingEntry,
     overall: ratingEntry,
-    strengths: z.string().max(8000).optional(),
-    improvements: z.string().max(8000).optional(),
+    strengths: z.string().max(1200).optional(),
+    improvements: z.string().max(1200).optional(),
     clientId: z.string().uuid().optional(),
     sessionId: z.string().uuid().optional(),
     ipAddress: z.string().optional()

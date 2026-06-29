@@ -77,8 +77,10 @@ export const submitSurvey = async (req, res) => {
             ipAddress: req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress
         };
 
+        // Persist survey data to DB or filesystem.
         await SurveyService.submitSurvey(surveyPayload);
 
+        // Separate from persistence, mail the survey when configured.
         await EmailService.sendSurveyAlert(surveyPayload);
 
         res.status(201).json({ message: 'Survey submitted successfully' });

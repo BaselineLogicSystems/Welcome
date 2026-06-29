@@ -63,7 +63,7 @@ export const surveyUI = {    async init(contextRoot) {
             const { clientId, sessionId } = getTrackingIds();
 
             // Clean and truncate data to 8000 chars on client side for better UX
-            const truncate = (str) => str?.slice(0, 8000);
+            const truncate = (str, len) => str?.slice(0, len);
 
             const data = {
                 ...rawData,
@@ -72,10 +72,10 @@ export const surveyUI = {    async init(contextRoot) {
                 safety: rawData.safety || undefined,
                 patience: rawData.patience || undefined,
                 overall: rawData.overall || undefined,
-                customerName: truncate(rawData.customerName?.trim()) || undefined,
-                customerDate: truncate(rawData.customerDate?.trim()) || undefined,
-                strengths: truncate(rawData.strengths?.trim()) || undefined,
-                improvements: truncate(rawData.improvements?.trim()) || undefined,
+                customerName: truncate(rawData.customerName?.trim(), 80) || undefined,
+                customerDate: truncate(rawData.customerDate?.trim(), 20) || undefined,
+                strengths: truncate(rawData.strengths?.trim(), 1200) || undefined,
+                improvements: truncate(rawData.improvements?.trim(), 1200) || undefined,
                 clientId,
                 sessionId
             };

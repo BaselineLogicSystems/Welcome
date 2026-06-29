@@ -8,11 +8,11 @@
         <!-- Basic Info -->
         <div class="section">
             <label for="customerName">Your Name (Optional)</label>
-            <input type="text" id="customerName" name="customerName" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            <input type="text" maxlength="80" id="customerName" name="customerName" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
         </div>
         <div class="section">
-            <label for="customerDate">Track Date (Optional)</label>
-            <input type="text" id="customerDate" name="customerDate" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            <label for="customerDate">Track Date</label>
+            <input type="date" id="customerDate" name="customerDate" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
         </div>
 
         <!-- Performance Ratings -->
@@ -83,12 +83,12 @@
         <!-- Qualitative Feedback -->
         <div class="section">
             <label for="improvements">How could the instructor improve the experience?</label>
-            <textarea id="improvements" name="improvements" rows="3"></textarea>
+            <textarea id="improvements" maxlength="1200" name="improvements" rows="3"></textarea>
         </div>
 
         <div class="section">
             <label for="strengths">What was the most helpful part of the instruction?</label>
-            <textarea id="strengths" name="strengths" rows="3"></textarea>
+            <textarea id="strengths" maxlength="1200" name="strengths" rows="3"></textarea>
         </div>
 
         <div id="surveyFeedback" style="margin-top: 10px; font-weight: bold;"></div>
