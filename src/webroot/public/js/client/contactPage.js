@@ -1,6 +1,6 @@
 
 import { contactUI } from './contactUi.js';
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
     contactUI.init('');
 });

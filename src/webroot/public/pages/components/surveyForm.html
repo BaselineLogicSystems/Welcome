@@ -1,0 +1,105 @@
+
+<!-- Survey Fragment -->
+<div class="survey-container">
+    <h2>Track Day Feedback</h2>
+    <p class="subtitle">Help us improve the high-performance driving experience.</p>
+
+    <form id="surveyForm" class="survey-form">
+        <!-- Basic Info -->
+        <div class="section">
+            <label for="customerName">Your Name (Optional)</label>
+            <input type="text" id="customerName" name="customerName" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+        <div class="section">
+            <label for="customerDate">Track Date (Optional)</label>
+            <input type="text" id="customerDate" name="customerDate" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <!-- Performance Ratings -->
+        <div class="section">
+            <label>Instructor Performance</label>
+
+            <!-- Question 1: Clarity -->
+            <div class="rating-row">
+                <span class="rating-label">Clarity of Instructions</span>
+                <div class="star-rating">
+                    <input type="radio" id="clarity5" name="clarity" value=5><label for="clarity5">★</label>
+                    <input type="radio" id="clarity4" name="clarity" value=4><label for="clarity4">★</label>
+                    <input type="radio" id="clarity3" name="clarity" value=3><label for="clarity3">★</label>
+                    <input type="radio" id="clarity2" name="clarity" value=2><label for="clarity2">★</label>
+                    <input type="radio" id="clarity1" name="clarity" value=1><label for="clarity1">★</label>
+                </div>
+            </div>
+
+            <!-- Question 2: Knowledge -->
+            <div class="rating-row">
+                <span class="rating-label">Technical Knowledge</span>
+                <div class="star-rating">
+                    <input type="radio" id="knowledge5" name="knowledge" value=5><label for="knowledge5">★</label>
+                    <input type="radio" id="knowledge4" name="knowledge" value=4><label for="knowledge4">★</label>
+                    <input type="radio" id="knowledge3" name="knowledge" value=3><label for="knowledge3">★</label>
+                    <input type="radio" id="knowledge2" name="knowledge" value=2><label for="knowledge2">★</label>
+                    <input type="radio" id="knowledge1" name="knowledge" value=1><label for="knowledge1">★</label>
+                </div>
+            </div>
+
+            <!-- Question 3: Safety -->
+            <div class="rating-row">
+                <span class="rating-label">Focus on Safety</span>
+                <div class="star-rating">
+                    <input type="radio" id="safety5" name="safety" value=5><label for="safety5">★</label>
+                    <input type="radio" id="safety4" name="safety" value=4><label for="safety4">★</label>
+                    <input type="radio" id="safety3" name="safety" value=3><label for="safety3">★</label>
+                    <input type="radio" id="safety2" name="safety" value=2><label for="safety2">★</label>
+                    <input type="radio" id="safety1" name="safety" value=1><label for="safety1">★</label>
+                </div>
+            </div>
+
+            <!-- Question 4: Patience -->
+            <div class="rating-row">
+                <span class="rating-label">Patience & Approach</span>
+                <div class="star-rating">
+                    <input type="radio" id="patience5" name="patience" value=5><label for="patience5">★</label>
+                    <input type="radio" id="patience4" name="patience" value=4><label for="patience4">★</label>
+                    <input type="radio" id="patience3" name="patience" value=3><label for="patience3">★</label>
+                    <input type="radio" id="patience2" name="patience" value=2><label for="patience2">★</label>
+                    <input type="radio" id="patience1" name="patience" value=1><label for="patience1">★</label>
+                </div>
+            </div>
+
+            <!-- Question 5: Overall -->
+            <div class="rating-row">
+                <span class="rating-label">Overall Satisfaction</span>
+                <div class="star-rating">
+                    <input type="radio" id="overall5" name="overall" value=5><label for="overall5">★</label>
+                    <input type="radio" id="overall4" name="overall" value=4><label for="overall4">★</label>
+                    <input type="radio" id="overall3" name="overall" value=3><label for="overall3">★</label>
+                    <input type="radio" id="overall2" name="overall" value=2><label for="overall2">★</label>
+                    <input type="radio" id="overall1" name="overall" value=1><label for="overall1">★</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Qualitative Feedback -->
+        <div class="section">
+            <label for="improvements">How could the instructor improve the experience?</label>
+            <textarea id="improvements" name="improvements" rows="3"></textarea>
+        </div>
+
+        <div class="section">
+            <label for="strengths">What was the most helpful part of the instruction?</label>
+            <textarea id="strengths" name="strengths" rows="3"></textarea>
+        </div>
+
+        <div id="surveyFeedback" style="margin-top: 10px; font-weight: bold;"></div>
+
+        <div class="section">
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </div>
+
+        <p style="font-size: 0.8em; color: #666; text-align: center; margin-bottom: 15px;">
+            By submitting this form, you agree to our <a href="policy.html" target="_blank">Survey Privacy Policy</a>.<br/>
+            We collect minimal technical data for security and analytics purposes, and will never sell, trade, or rent your data.
+        </p>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+
+import { DataDbService } from './data.dbservice.js';
+import { EmailService } from '../middleware/nodemailer.service.js';
+
+let configured = false;
+
+export const SurveyService = {
+    async getConfiguredDataService() {
+        configured = true;
+        return DataDbService;
+    },
+
+    async submitSurvey(surveyData) {
+        const dataService = await this.getConfiguredDataService();
+
+        if (!configured) {
+            return surveyData;
+        }
+
+        const savedData = await dataService.saveSurvey(surveyData);
+
+        await EmailService.sendSurveyAlert(savedData);
+
+        return savedData;
+    },
+
+    async getAllSurveys(params = {}) {
+        const dataService = await this.getConfiguredDataService();
+        if (!configured) {
+            return [];
+        }
+
+        const result = await dataService.getSurveys({
+            page: params.page || 1,
+            limit: params.limit || 100
+        });
+        return result.data;
+    }
+};

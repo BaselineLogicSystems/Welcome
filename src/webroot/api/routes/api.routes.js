@@ -2,8 +2,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 
-import * as contactController from '../controllers/contact.controller.js';
-import * as emailController from '../controllers/subscribe.controller.js';
+import * as apiController from '../controllers/welcome.controllers.js';
 
 const router = express.Router();
 
@@ -16,15 +15,21 @@ router.post(`/api/contact`, [
     body('sender_email').isEmail(),
     body('subject').notEmpty(),
     body('body').notEmpty(),
-], contactController.submitContactForm);
+], apiController.submitContactForm);
 
 router.get(`/api/emails`,
-    emailController.getEmails
+    apiController.getEmails
 );
 
 router.post(`/api/emails`, [
     body('email').isEmail(),
     body('action').isIn(['add', 'remove']),
-], emailController.manageEmails);
+], apiController.manageEmails);
+
+router.post(`/api/survey`,
+    apiController.submitSurvey);
+
+router.get(`/api/survey`,
+    apiController.getSurveys);
 
 export default router;

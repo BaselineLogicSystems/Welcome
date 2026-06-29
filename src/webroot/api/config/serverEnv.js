@@ -24,7 +24,7 @@ export const SERVER_CONFIG = {
     CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_STATIC_DIR: process.env.ROOTPATH || path.join(projectRoot, 'public'),
+    ROOT_DIR: path.join(process.cwd(), 'public'),
 
     DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
@@ -71,7 +71,7 @@ export const FILE_PATHS = {
     SUBSCRIBE_LIST: path.join(SERVER_CONFIG.DATA_DIR, 'subscribe.json'),
 };
 
-const configPath = path.join(SERVER_CONFIG.ROOT_STATIC_DIR, 'config', 'config.json');
+const configPath = path.join(SERVER_CONFIG.ROOT_DIR, 'config', 'config.json');
 
 async function readJSON(filePath) {
     try {
