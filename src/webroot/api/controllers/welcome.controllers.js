@@ -75,6 +75,7 @@ export const submitSurvey = async (req, res) => {
             ...validatedData,
             ipAddress: req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress
         };
+        surveyPayload.createdAt = new Date().toISOString();
 
         await SurveyService.submitSurvey(surveyPayload);
 

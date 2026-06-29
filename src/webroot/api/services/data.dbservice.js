@@ -98,7 +98,7 @@ export const DataDbService = {
     async saveSurvey(surveyData) {
         try {
             const survey = new WelcomeModels(surveyData);
-            return await survey.save();
+            await survey.save();
         } catch (err) {
             logger.error({ err, surveyData }, 'Database error saving survey data');
             throw err;

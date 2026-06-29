@@ -19,9 +19,7 @@ export const SurveyService = {
             return surveyData;
         }
 
-        const savedData = await dataService.saveSurvey(surveyData);
-
-        return savedData;
+        return await dataService.saveSurvey(surveyData);
     },
 
     async getAllSurveys(params = {}) {
