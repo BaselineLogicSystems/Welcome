@@ -1,19 +1,22 @@
 
 import { DataDbService } from './data.dbservice.js';
 import { EmailService } from '../middleware/nodemailer.service.js';
+import { SERVER_CONFIG } from '../config/serverEnv.js';
 
 let configured = false;
 
 export const SurveyService = {
     async getConfiguredDataService() {
-        configured = true;
-        return DataDbService;
+        if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
+            configured = true;
+            return DataDbService;
+        }
     },
 
     async submitSurvey(surveyData) {
         const dataService = await this.getConfiguredDataService();
 
-        if (!configured) {
+        if (!configured || !dataService) {
             return surveyData;
         }
 
