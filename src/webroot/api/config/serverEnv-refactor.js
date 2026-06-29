@@ -11,6 +11,8 @@ const filepath = fileURLToPath(import.meta.url);
 const projectRoot = path.join(path.dirname(filepath), '..' ,'..');
 const envFile = path.join(projectRoot, '..', 'main', 'configEnv', `.env.${ENV}`);
 
+const rootDir = path.join(process.cwd(), 'public');
+
 // Load .env config files to process environment first.
 function loadLocalEnv() {
     try {
@@ -37,7 +39,7 @@ export const SERVER_CONFIG = {
     CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_DIR: path.join(process.cwd(), 'public'),
+    ROOT_DIR: rootDir,
 
     DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
@@ -92,6 +94,14 @@ export const FILE_PATHS = {
 };
 
 const configPath = path.join(SERVER_CONFIG.ROOT_DIR, 'config', 'config.json');
+let cachedConfig = null;
+
+export async function readConfigFile() {
+    if (cachedConfig) return cachedConfig;
+    const baseCfg = await readJSON(configPath);
+    cachedConfig = baseCfg || {};
+    return cachedConfig;
+}
 
 async function readJSON(filePath) {
     try {
@@ -100,50 +110,5 @@ async function readJSON(filePath) {
     } catch (err) {
         console.error(`Error reading JSON at ${filePath}:`, err);
         return null;
-    }
-}
-
-export async function readConfigFile() {
-    const baseCfg = await readJSON(configPath);
-    return baseCfg || {};
-}
-
-export const configJson = {
-    "app": {
-        "pages": {
-            "index": {
-                "enabled": true,
-                "indexed": false,
-                "contentFile": "index",
-                "link": "index.html",
-                "title": "Home"
-            },
-            "book": {
-                "enabled": true,
-                "indexed": false,
-                "contentFile": "book",
-                "link": "book.html",
-                "title": "Backup Book"
-            },
-            "disclaimer": {
-                "enabled": true,
-                "indexed": false,
-                "contentFile": "disclaimer",
-                "link": "disclaimer.html",
-                "title": "Disclaimer and Privacy Policy"
-            },
-            "survey": {
-                "enabled": true,
-                "indexed": true,
-                "link": "survey.html",
-                "title": "Survey Questions"
-            },
-            "policy": {
-                "enabled": true,
-                "indexed": true,
-                "link": "policy.html",
-                "title": "Survey Policy"
-            }
-        }
     }
 }
