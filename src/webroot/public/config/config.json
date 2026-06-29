@@ -27,6 +27,13 @@
         "link": "index.html",
         "title": "Home"
       },
+      "book": {
+        "enabled": true,
+        "indexed": false,
+        "contentFile": "book",
+        "link": "book.html",
+        "title": "Backup Book"
+      },
       "disclaimer": {
         "enabled": true,
         "indexed": false,
@@ -34,17 +41,17 @@
         "link": "disclaimer.html",
         "title": "Disclaimer and Privacy Policy"
       },
-      "policy": {
-        "enabled": true,
-        "indexed": true,
-        "link": "policy.html",
-        "title": "Survey Policy"
-      },
       "survey": {
         "enabled": true,
         "indexed": true,
         "link": "survey.html",
         "title": "Survey Questions"
+      },
+      "policy": {
+        "enabled": true,
+        "indexed": true,
+        "link": "policy.html",
+        "title": "Survey Policy"
       }
     }
   }

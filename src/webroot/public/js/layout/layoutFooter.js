@@ -11,9 +11,11 @@ export async function initFooter(config, siteseo) {
 
   footerEl.innerHTML = `
     <p>© Copyright 2026 <a class="footer-link" style=subtle href="index.html#sendEmail">${copyrightOwner.name}</a>.  All Rights Reserved.
+    <!--
     | <a class="footer-link" style=subtle href="disclaimer.html#legal">Legal Disclaimer</a>
     | <a class="footer-link" style=subtle href="disclaimer.html#policy">Privacy Policy</a></p>
-
+    -->
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
