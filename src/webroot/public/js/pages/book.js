@@ -1,10 +1,6 @@
 // src/assets/js/book.js
-import { loadConfig } from '../config/clientConfig.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const config = await loadConfig();
-
-  // const pageCfg = config.app?.pages?.['index'];
   const contentPath = `content/book.json`;
 
     fetch(contentPath)

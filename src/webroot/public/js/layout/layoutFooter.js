@@ -15,6 +15,7 @@ export async function initFooter(config, siteseo) {
     | <a class="footer-link" style=subtle href="disclaimer.html#legal">Legal Disclaimer</a>
     | <a class="footer-link" style=subtle href="disclaimer.html#policy">Privacy Policy</a></p>
     -->
+    | <a class="footer-link" style=subtle href="policy.html">Privacy Policy</a>
     
     <script type="application/ld+json">
     {
