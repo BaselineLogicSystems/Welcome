@@ -19,8 +19,8 @@ const subscribeSchema = new mongoose.Schema({
 export const SubscribeModel = mongoose.model('Subscribe', subscribeSchema);
 
 const surveySchema = new mongoose.Schema({
-    customerName: { type: String },
-    customerDate: { type: String },
+    surveyLocation: { type: String },
+    surveyDate: { type: String },
     clarity: { type: Number, required: true },
     knowledge: { type: Number, required: true },
     safety: { type: Number, required: true },

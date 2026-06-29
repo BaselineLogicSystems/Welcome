@@ -59,7 +59,7 @@ export const EmailService = {
                 from: `"BLS: Survey Notice" <${SERVER_CONFIG.KEYS.SMTP_USER}>`,
                 to: SERVER_CONFIG.KEYS.SURVEY_RCPT,
                 subject: `🚨 Survey Result on: ${surveyDetails.createdAt}`,
-                text: `Survey result received.\n\nFrom: ${surveyDetails.customerName || "(empty)"} on ${surveyDetails.customerDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\nIP Hash: ${surveyDetails.ipAddress}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
+                text: `Survey result received.\n\nFrom: ${surveyDetails.surveyLocation || "(empty)"} on ${surveyDetails.surveyDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\nIP Hash: ${surveyDetails.ipAddress}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
             };
 
             const strOptions = JSON.stringify(mailOptions);

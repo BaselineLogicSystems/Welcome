@@ -38,8 +38,8 @@ export const sanitizeString = (input) => {
 };
 
 export const SurveySchema = z.object({
-    customerName: z.string().max(80).optional().transform(sanitizeString),
-    customerDate: z.string().max(20).optional().transform(sanitizeString),
+    surveyLocation: z.string().max(80).optional().transform(sanitizeString),
+    surveyDate: z.string().max(20).optional().transform(sanitizeString),
     clarity: ratingEntry,
     knowledge: ratingEntry,
     safety: ratingEntry,

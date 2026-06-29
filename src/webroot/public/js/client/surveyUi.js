@@ -72,8 +72,8 @@ export const surveyUI = {    async init(contextRoot) {
                 safety: rawData.safety || undefined,
                 patience: rawData.patience || undefined,
                 overall: rawData.overall || undefined,
-                customerName: truncate(rawData.customerName?.trim(), 80) || undefined,
-                customerDate: truncate(rawData.customerDate?.trim(), 20) || undefined,
+                surveyLocation: truncate(rawData.surveyLocation?.trim(), 80) || undefined,
+                surveyDate: truncate(rawData.surveyDate?.trim(), 20) || undefined,
                 strengths: truncate(rawData.strengths?.trim(), 1200) || undefined,
                 improvements: truncate(rawData.improvements?.trim(), 1200) || undefined,
                 clientId,
@@ -83,9 +83,13 @@ export const surveyUI = {    async init(contextRoot) {
             try {
                 const response = await surveyAPI.sendSurveyMessage(contextRoot, data);
                 if (response.ok) {
-                    feedback.textContent = 'Survey recorded; Thanks for your feedback!';
-                    feedback.style.color = 'green';
-                    form.reset();
+                    // Fetch and display the success response page
+                    const respHtml = await fetch(`/pages/components/surveyResponse.html`);
+                    const htmlText = await respHtml.text();
+                    const placeholder = document.getElementById('survey-component');
+                    if (placeholder) {
+                        placeholder.innerHTML = htmlText;
+                    }
                 } else {
                     const errData = await response.json().catch(() => ({}));
                     feedback.textContent = errData.error || 'Failed to send message.';
