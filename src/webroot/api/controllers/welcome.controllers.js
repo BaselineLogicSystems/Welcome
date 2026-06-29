@@ -1,10 +1,30 @@
 
+import crypto from 'crypto';
+
 import { logger } from '../middleware/logger.js';
 import { ContactSchema } from '../schemas/surveySchema.js';
 import { ContactService, SubscribeService, SurveyService } from '../services/welcome.service.js';
 import { SubscribeSchema } from '../schemas/surveySchema.js';
 import { SurveySchema } from '../schemas/surveySchema.js';
 import { EmailService } from '../middleware/nodemailer.service.js';
+
+/**
+ * Anonymizes an IP address using SHA-256 and a secret salt.
+ * @param {string} ip - The raw IP address.
+ * @returns {string|null} - The salted hash of the IP or null if no IP provided.
+ */
+export const anonymizeIp = (ip) => {
+    if (!ip) return null;
+
+    // Use a salt from environment variables for security.
+    // Ensure IP_SALT is defined in your .env file.
+    const salt = process.env.IP_SALT || 'emergency-fallback-salt-please-set-in-env';
+
+    return crypto
+        .createHmac('sha256', salt)
+        .update(ip)
+        .digest('hex');
+};
 
 // --- Contact Controllers ---
 export const submitContactForm = async (req, res) => {
@@ -67,10 +87,15 @@ export const submitSurvey = async (req, res) => {
         logger.info ("Received survey submission");
         const validatedData = SurveySchema.parse(req.body);
 
+        // Capture and anonymize the IP address from the request object
+        const rawIp = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        const hashedIp = anonymizeIp(rawIp);
+
+        // Capture the IP address from the request object
         const surveyPayload = {
             ...validatedData,
             createdAt: new Date().toISOString(),
-            ipAddress: req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress
+            ipAddress: hashedIp
         };
 
         // Persist survey data to DB or filesystem.

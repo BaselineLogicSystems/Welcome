@@ -5,8 +5,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-dotenv.config();
-
 // Logic to ensure projectRoot is always the project root
 const ENV = process.env.NODE_ENV || 'development';
 const filepath = fileURLToPath(import.meta.url);

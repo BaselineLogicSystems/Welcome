@@ -50,26 +50,20 @@ export const EmailService = {
     async sendSurveyAlert(surveyDetails) {
 
         // Only when feature flag is enabled.
-        // if (SERVER_CONFIG.FEATURES.ENABLE_SURVEY_NOTICE !== true) return;
+        if (SERVER_CONFIG.FEATURES.ENABLE_SURVEY_NOTICE !== true) return;
         logger.info ("Mailing survey details");
 
         try {
+            // Careful!
             const mailOptions = {
                 from: `"BLS: Survey Notice" <${SERVER_CONFIG.KEYS.SMTP_USER}>`,
                 to: SERVER_CONFIG.KEYS.SURVEY_RCPT,
                 subject: `🚨 Survey Result on: ${surveyDetails.createdAt}`,
-                text: `Survey result received.\n\nFrom: ${surveyDetails.customerName || "(empty)"} on ${surveyDetails.customerDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
+                text: `Survey result received.\n\nFrom: ${surveyDetails.customerName || "(empty)"} on ${surveyDetails.customerDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\nIP Hash: ${surveyDetails.ipAddress}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
             };
 
             const strOptions = JSON.stringify(mailOptions);
-
             logger.info(`Sending mail: ${strOptions}`);
-
-            // TODO: Move up after testing!  To:::
-            // Only when feature flag is enabled.
-            if (SERVER_CONFIG.FEATURES.ENABLE_SURVEY_NOTICE !== true
-                 || SERVER_CONFIG.ENVIRON_NAME === 'testrunner')  // Double-careful for now; test often!
-                return;
 
             await transporter.sendMail(mailOptions);
 
