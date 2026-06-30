@@ -1,14 +1,14 @@
 
 import crypto from 'crypto';
 
-import {connectDB} from "../middleware/db.service.js";
+import { connectDB } from "../middleware/db.service.js";
 import { logger } from '../middleware/logger.js';
 
 import { ContactSchema } from '../schemas/welcome.schemas.js';
 import { ContactService, SubscribeService, SurveyService } from '../services/welcome.service.js';
+import { EmailService } from '../middleware/nodemailer.service.js';
 import { SubscribeSchema } from '../schemas/welcome.schemas.js';
 import { SurveySchema } from '../schemas/welcome.schemas.js';
-import { EmailService } from '../middleware/nodemailer.service.js';
 
 /**
  * Anonymizes an IP address using SHA-256 and a secret salt.
@@ -96,7 +96,7 @@ export const submitSurvey = async (req, res) => {
         // Capture the IP address from the request object
         const surveyPayload = {
             ...validatedData,
-            createdAt: new Date().toISOString(),
+            createdAt: new Date(),
             ipAddress: hashedIp
         };
 

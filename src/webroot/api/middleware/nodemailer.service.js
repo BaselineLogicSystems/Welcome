@@ -82,10 +82,13 @@ export const EmailService = {
 
         try {
             // Careful!  Place in try catch, to avoid unexpected failure.
+            const formatedDate = new Date(surveyDetails.createdAt).toLocaleString("en-US", {
+                timeZone: "America/New_York"
+            });
             const mailOptions = {
                 from: `"BLS: Survey Notice" <${SERVER_CONFIG.KEYS.SMTP_USER}>`,
                 to: SERVER_CONFIG.KEYS.SURVEY_RCPT,
-                subject: `🚨 Survey Result on: ${surveyDetails.createdAt}`,
+                subject: `🚨 Survey Result on: ${formatedDate} (EST)`,
                 text: `Survey result received.\n\nFrom: ${surveyDetails.surveyLocation || "(empty)"} on ${surveyDetails.surveyDate || "(empty)"}\nClarity: ${surveyDetails.clarity}, Knowledge: ${surveyDetails.knowledge}, Safety: ${surveyDetails.safety}, Patience: ${surveyDetails.patience}, Overall: ${surveyDetails.overall}\n\nStrengths: ${surveyDetails.strengths || "(empty)"}\nImprovements: ${surveyDetails.improvements || "(empty)"}\nIP Hash: ${surveyDetails.ipAddress?.substring(0,20)}\n\nBest Regards,\nBaseline Logic Systems, LLC\nBaselineLogicSystems@pm.me\n\n`
             };
 

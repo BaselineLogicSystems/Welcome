@@ -1,7 +1,5 @@
 
 import dotenv from 'dotenv';
-
-import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -71,9 +69,9 @@ export const SERVER_CONFIG = {
         GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
         GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         SURVEY_RCPT: process.env.SURVEY_RCPT || 'ZacVohs-Consulting@pm.me',
-        SMTP_HOST: process.env.SMTP_HOST,
-        SMTP_PORT: process.env.SMTP_PORT,
-        SMTP_USER: process.env.SMTP_USER,
+        SMTP_HOST: process.env.SMTP_HOST || 'smtp.gmail.com',
+        SMTP_PORT: process.env.SMTP_PORT || 465,
+        SMTP_USER: process.env.SMTP_USER || 'BaselineLogicNotice@gmail.com',
         SMTP_PASS: process.env.SMTP_PASS
     },
 
@@ -93,6 +91,25 @@ export const FILE_PATHS = {
 
 export const configJson = {
     "app": {
+        "buildStatic": false,
+        "contextRoot": "/Welcome",
+        "name": "Welcome",
+        "title": "Web Landing Page",
+        "image": {
+            "imageFile": "banner0.jpg",
+            "caption": "Welcome!  We're glad you're here!"
+        },
+        "copyright": {
+            "name": "Baseline Logic Systems, LLC",
+            "email": "ZacVohs-Consulting@pm.me"
+        },
+        "features": {
+            "authorizationFooter": false,
+            "calendarLocal": false,
+            "emailLocal": true,
+            "newsletterLocal": false,
+            "nodeMailerEnabled": false
+        },
         "pages": {
             "index": {
                 "enabled": true,
@@ -130,3 +147,4 @@ export const configJson = {
         }
     }
 }
+
