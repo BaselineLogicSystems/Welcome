@@ -20,7 +20,7 @@ router.get(`/{:page}`, async (req, res) => {
         return res.status(404).sendFile(errorPage);
     }
 
-    console.log (`Forwarding page: ${pageCfg.link}`);
+    console.log (`Serving page: ${pageCfg.link}`);
     const pagePath = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', `${pageName}.html`);
     res.sendFile(pagePath, err => {
         if (err) res.status(404).sendFile(errorPage);

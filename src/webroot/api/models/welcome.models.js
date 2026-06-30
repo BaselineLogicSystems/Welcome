@@ -34,4 +34,4 @@ const surveySchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-export const WelcomeModels = mongoose.model('Survey', surveySchema);
+export const SurveyModel = mongoose.model('Survey', surveySchema);

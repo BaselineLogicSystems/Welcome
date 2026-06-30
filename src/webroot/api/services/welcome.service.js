@@ -1,7 +1,8 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { ContactModel, SubscribeModel, WelcomeModels } from '../models/welcome.models.js';
+
+import { ContactModel, SubscribeModel, SurveyModel } from '../models/welcome.models.js';
 import { logger } from '../middleware/logger.js';
 import { FILE_PATHS, SERVER_CONFIG } from '../config/serverEnv.js';
 
@@ -90,38 +91,22 @@ export const SurveyService = {
         }
     },
 
-    async getSurveysDb({ page = 1, limit = 100 }) {
+    async hasSubmittedRecently(ipAddress) {
+        if (!SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO || !ipAddress) return false;
         try {
-            const numericPage = Math.max(1, Number(page));
-            const numericLimit = Math.max(1, Math.min(100, Number(limit)));
-
-            const skip = (numericPage - 1) * numericLimit;
-            const data = await WelcomeModels.find().sort({ createdAt: -1 }).skip(skip).limit(numericLimit);
-            const total = await WelcomeModels.countDocuments();
-            return { data, total, page: numericPage, limit: numericLimit };
+            const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            const existing = await SurveyModel.findOne({
+                ipAddress,
+                createdAt: { $gte: twentyFourHoursAgo }
+            });
+            return !!existing;
         } catch (err) {
-            logger.error({ err }, 'Database error fetching survey data');
-            throw err;
+            logger.error({ err }, 'Error checking survey rate limit for IP');
+            return false; // Default to allowing email if DB check fails
         }
     },
 
-    async saveSurveyDb(surveyData) {
-        try {
-            const survey = new WelcomeModels(surveyData);
-            await survey.save();
-        } catch (err) {
-            logger.error({ err, surveyData }, 'Database error saving survey data');
-            throw err;
-        }
-    },
-
-    async submitSurvey(surveyData) {
-        const dataService = await this.getConfiguredDataService();
-        if (!configured || !dataService) return surveyData;
-        return await dataService.saveSurveyDb(surveyData);
-    },
-
-    async getAllSurveys(params = {}) {
+    async getSurveys(params = {}) {
         const dataService = await this.getConfiguredDataService();
         if (!configured) return [];
         const result = await dataService.getSurveysDb({
@@ -129,7 +114,39 @@ export const SurveyService = {
             limit: params.limit || 100
         });
         return result.data;
-    }
+    },
+
+    async getSurveysDb({ page = 1, limit = 100 }) {
+        try {
+            const numericPage = Math.max(1, Number(page));
+            const numericLimit = Math.max(1, Math.min(100, Number(limit)));
+
+            const skip = (numericPage - 1) * numericLimit;
+            const data = await SurveyModel.find().sort({ createdAt: -1 }).skip(skip).limit(numericLimit);
+            const total = await SurveyModel.countDocuments();
+            return { data, total, page: numericPage, limit: numericLimit };
+        } catch (err) {
+            logger.error({ err }, 'Database error fetching survey data');
+            throw err;
+        }
+    },
+
+    async submitSurvey(surveyData) {
+        const dataService = await this.getConfiguredDataService();
+        if (!configured || !dataService) return surveyData;
+        return await dataService.submitSurveyDb(surveyData);
+    },
+
+    async submitSurveyDb(surveyData) {
+        try {
+            const survey = new SurveyModel(surveyData);
+            await survey.save();
+        } catch (err) {
+            logger.error({ err, surveyData }, 'Database error saving survey data');
+            throw err;
+        }
+    },
+
 };
 
 // --- Subscribe Service ---
