@@ -40,6 +40,9 @@ export const SERVER_CONFIG = {
     DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
+    // Performance
+    CIRCUIT_BREAKER_TIMEOUT: 60000, // 1 minute lockout
+
     // Security
     NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "BaselineLogicSystems@pm.me",
     RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW, 10) || 15 * 60 * 1000, // 15 mins

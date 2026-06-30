@@ -3,16 +3,29 @@ import mongoose from 'mongoose';
 import { logger } from './logger.js';
 import { SERVER_CONFIG } from '../config/serverEnv.js';
 
-let isConnected = false;
+let dbBrokenUntil = 0;
 
 export const connectDB = async () => {
-    if (isConnected) return;
-    if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO === false) return;
+
+    // 0. Feature Flag
+    if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO === false) return null;
+
+    // 1. Check Circuit Breaker
+    if (Date.now() < dbBrokenUntil) {
+        logger.warn('Database circuit breaker is OPEN. Skipping connection attempt.');
+        return null;
+    }
+
+    // 2. Check if Mongoose already has an active connection
+    // readyState: 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+    if (mongoose.connection.readyState === 1) {
+        return mongoose.connection;
+    }
 
     const mongoUri = SERVER_CONFIG.URLS.DB_MONDO_SERVER;
     if (!mongoUri) {
-        logger.error('MONGODB_URL is not defined in environment variables');
-        throw new Error('Database configuration missing');
+        logger.error('Database configuration missing');
+        return null;
     }
 
     try {
@@ -20,11 +33,12 @@ export const connectDB = async () => {
             serverSelectionTimeoutMS: 5000, // Fail fast for serverless
         });
 
-        isConnected = true;
-        logger.info('Successfully connected to MongoDB');
+        logger.info('Successfully connected to DB');
+        return mongoose.connection;
 
-        return db;
     } catch (err) {
+        // 3. Activate Circuit Breaker on failure
+        dbBrokenUntil = Date.now() + SERVER_CONFIG.CIRCUIT_BREAKER_TIMEOUT;
         logger.error({ err }, 'MongoDB connection error');
         throw err;
     }

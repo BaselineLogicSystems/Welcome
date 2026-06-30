@@ -11,7 +11,7 @@ router.get('/favicon.ico', (req, res) => {
     res.redirect(301, `/images/favicon.png`);
 });
 
-router.get(`${SERVER_CONFIG.CONTEXT_ROOT}/config/config.json`, (req, res) => {
+router.get(`/config/config.json`, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(configJson));
 });
