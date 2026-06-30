@@ -1,7 +1,6 @@
 
 import crypto from 'crypto';
 
-import { connectDB } from "../middleware/db.service.js";
 import { logger } from '../middleware/logger.js';
 
 import { ContactSchema } from '../schemas/welcome.schemas.js';
@@ -99,8 +98,6 @@ export const submitSurvey = async (req, res) => {
             createdAt: new Date(),
             ipAddress: hashedIp
         };
-
-        await connectDB();
 
         // Persist survey data to DB or filesystem.
         await SurveyService.submitSurvey(surveyPayload);

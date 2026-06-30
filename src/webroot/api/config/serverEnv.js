@@ -80,7 +80,7 @@ export const SERVER_CONFIG = {
 
     URLS: {
         CONVERTKIT_SERVER: process.env.CONVERTKIT_API_URL,
-        DB_MONDO_SERVER: process.env.MONGODB_URL,
+        DB_MONDO_SERVER: process.env.MONGODB_URI,
         DB_REDIS_SERVER: process.env.DB_REDIS_SERVER,
     }
 

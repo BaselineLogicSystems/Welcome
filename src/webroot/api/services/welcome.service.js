@@ -2,9 +2,10 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { ContactModel, SubscribeModel, SurveyModel } from '../models/welcome.models.js';
-import { logger } from '../middleware/logger.js';
 import { FILE_PATHS, SERVER_CONFIG } from '../config/serverEnv.js';
+import { connectDB } from "../middleware/db.service.js";
+import { logger } from '../middleware/logger.js';
+import { ContactModel, SubscribeModel, SurveyModel } from '../models/welcome.models.js';
 
 let configured = false;
 
@@ -107,6 +108,7 @@ export const SurveyService = {
     },
 
     async getSurveys(params = {}) {
+
         const dataService = await this.getConfiguredDataService();
         if (!configured) return [];
         const result = await dataService.getSurveysDb({
@@ -139,8 +141,13 @@ export const SurveyService = {
 
     async submitSurveyDb(surveyData) {
         try {
-            const survey = new SurveyModel(surveyData);
-            await survey.save();
+            if (!connectDB()) {
+                logger.error('Save failed; Database connection not available');
+            } else {
+                const survey = new SurveyModel(surveyData);
+                await survey.save();
+                logger.info ("Survey Saved.");
+            }
         } catch (err) {
             logger.error({ err, surveyData }, 'Database error saving survey data');
             throw err;
