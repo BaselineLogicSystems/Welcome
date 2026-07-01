@@ -11,7 +11,7 @@ export async function initHeader(config, page, siteseo) {
 
   headerEl.innerHTML = `
     <link rel="icon" href="${siteseo.favicon}" type="image/png">
-    <link rel="stylesheet" href="${siteseo.stylesheet}" />
+    <link rel="stylesheet" href="../css/main.css" />
 
     <!-- SEO Optimization -->
     <meta name="description" content="${siteseo.ld.description}">
