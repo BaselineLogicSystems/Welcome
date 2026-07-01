@@ -27,7 +27,7 @@ export const reportDbFailure = (err) => {
 export const connectDB = async () => {
 
     // 0. Feature Flag
-    if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO === false) return null;
+    if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO === false) return false;
 
     logger.debug ("Connecting to DB");
     // 1. Check Circuit Breaker

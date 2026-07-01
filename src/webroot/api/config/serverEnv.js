@@ -146,6 +146,12 @@ export const configJson = {
                 "indexed": true,
                 "link": "policy.html",
                 "title": "Survey Policy"
+            },
+            "review": {
+                "enabled": true,
+                "indexed": true,
+                "link": "review.html",
+                "title": "Review Results"
             }
         }
     }
