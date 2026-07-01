@@ -35,11 +35,11 @@ export const connectDB = async () => {
         logger.warn('Database circuit breaker is OPEN. Skipping connection attempt.');
         return false;
     }
-    logger.debug ("Circuit is not closed");
 
     // 2. Check if Mongoose already has an active connection
     // readyState: 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
     if (mongoose.connection.readyState === 1) {
+        logger.debug ("Circuit is open");
         return true;
     }
 

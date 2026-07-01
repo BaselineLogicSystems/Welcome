@@ -4,7 +4,7 @@ import crypto from 'crypto';
 import { logger } from '../middleware/logger.js';
 
 import { ContactSchema } from '../schemas/welcome.schemas.js';
-import { ContactService, SubscribeService, SurveyService } from '../services/welcome.service.js';
+import { ContactService, SubscribeService, WelcomeService } from '../services/welcome.service.js';
 import { EmailService } from '../middleware/nodemailer.service.js';
 import { SubscribeSchema } from '../schemas/welcome.schemas.js';
 import { SurveySchema } from '../schemas/welcome.schemas.js';
@@ -100,7 +100,7 @@ export const submitSurvey = async (req, res) => {
         };
 
         // Persist survey data to DB or filesystem.
-        await SurveyService.submitSurvey(surveyPayload);
+        await WelcomeService.submitSurvey(surveyPayload);
 
         // Separate from persistence, mail the survey when configured.
         await EmailService.sendSurveyAlert(surveyPayload);
@@ -118,10 +118,7 @@ export const submitSurvey = async (req, res) => {
 
 export const getSurveys = async (req, res) => {
     try {
-
-        await connectDB();
-
-        const surveys = await SurveyService.getSurveys(req.query);
+        const surveys = await WelcomeService.getSurveys(req.query);
         res.json(surveys);
     } catch (err) {
         logger.error({ err, path: req.path }, 'Internal server error in getSurveys');
