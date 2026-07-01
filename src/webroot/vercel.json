@@ -6,7 +6,7 @@
   }],
   "functions": {
     "api/server.js": {
-      "includeFiles": "public/pages/*"
+      "includeFiles": "public/**"
     }
   },
   "routes": [
