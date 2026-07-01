@@ -12,7 +12,7 @@
     },
     {
       "src": "/(.*).html",
-      "dest": "/pages/$1"
+      "dest": "/public/pages/$1"
     },
     {
       "src": "/(.*)",
