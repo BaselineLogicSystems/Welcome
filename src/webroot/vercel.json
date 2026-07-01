@@ -3,12 +3,16 @@
   "version": 2,
   "functions": {
     "api/server.js": {
-      "includeFiles": "public/**"
+      "includeFiles": "public/pages/**"
     }
   },
   "routes": [
     {
       "handle": "filesystem"
+    },
+    {
+      "src": "/(.*).html",
+      "dest": "/pages/$1"
     },
     {
       "src": "/(.*)",
