@@ -35,7 +35,7 @@ export const SERVER_CONFIG = {
     CONTEXT_ROOT: process.env.CONTEXT_ROOT || '/',
     ENVIRON_NAME: ENV,
     PORT: parseInt(process.env.PORT, 10) || 8080,
-    ROOT_DIR: path.join(process.cwd(), process.env.PUBLIC_DIR || ''),
+    ROOT_DIR: path.join(process.cwd(), process.env.PUBLIC_DIR || 'public'),
 
     DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
