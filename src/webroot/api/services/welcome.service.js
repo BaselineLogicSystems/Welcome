@@ -1,17 +1,19 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { ContactModel, SubscribeModel, WelcomeModels } from '../models/welcome.models.js';
-import { logger } from '../middleware/logger.js';
+
 import { FILE_PATHS, SERVER_CONFIG } from '../config/serverEnv.js';
+import { connectDB } from "../middleware/db.service.js";
+import { logger } from '../middleware/logger.js';
+import { ContactModel, SubscribeModel, SurveyModel } from '../models/welcome.models.js';
 
 let configured = false;
 
 // --- Survey & Database Service ---
-export const SurveyService = {
+export const WelcomeService = {
     async getConfiguredDataService() {
         if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
-            configured = true;
+            configured = connectDB();
             return this;
         }
         return null;
@@ -19,6 +21,7 @@ export const SurveyService = {
 
     async saveMessage(contactData) {
         try {
+            await connectDB();
             logger.info({ from: contactData.from }, 'Processing new contact enquiry (db)');
             const newMessage = new ContactModel(contactData);
             return await newMessage.save();
@@ -30,6 +33,7 @@ export const SurveyService = {
 
     async searchMessages({ page = 1, limit = 10 }) {
         try {
+            await connectDB();
             const numericPage = Math.max(1, Number(page));
             const numericLimit = Math.max(1, Math.min(100, Number(limit)));
 
@@ -52,6 +56,7 @@ export const SurveyService = {
 
     async getSubscribers({ page = 1, limit = 10 }) {
         try {
+            await connectDB();
             const numericPage = Math.max(1, Number(page));
             const numericLimit = Math.max(1, Math.min(100, Number(limit)));
             const total = await SubscribeModel.countDocuments();
@@ -69,6 +74,7 @@ export const SurveyService = {
 
     async removeSubscriber(email) {
         try {
+            await connectDB();
             await SubscribeModel.deleteOne({ email });
             return { success: true };
         } catch (err) {
@@ -79,6 +85,7 @@ export const SurveyService = {
 
     async saveSubscriber(subscriberData) {
         try {
+            await connectDB();
             return await SubscribeModel.findOneAndUpdate(
                 {email: subscriberData.email},
                 {$setOnInsert: {email: subscriberData.email, subscribedAt: new Date()}},
@@ -90,46 +97,52 @@ export const SurveyService = {
         }
     },
 
-    async getSurveysDb({ page = 1, limit = 100 }) {
+    async hasSubmittedRecently(ipAddress) {
+        if (!SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO || !ipAddress) return false;
         try {
+            await connectDB();
+            const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            const existing = await SurveyModel.findOne({
+                ipAddress,
+                createdAt: { $gte: twentyFourHoursAgo }
+            });
+            return !!existing;
+        } catch (err) {
+            logger.error({ err }, 'Error checking survey rate limit for IP');
+            return false; // Default to allowing email if DB check fails
+        }
+    },
+
+    async getSurveys({ page = 1, limit = 100 }) {
+        try {
+            await connectDB();
             const numericPage = Math.max(1, Number(page));
             const numericLimit = Math.max(1, Math.min(100, Number(limit)));
 
             const skip = (numericPage - 1) * numericLimit;
-            const data = await WelcomeModels.find().sort({ createdAt: -1 }).skip(skip).limit(numericLimit);
-            const total = await WelcomeModels.countDocuments();
-            return { data, total, page: numericPage, limit: numericLimit };
+            const data = await SurveyModel.find().sort({createdAt: -1}).skip(skip).limit(numericLimit);
+            const total = await SurveyModel.countDocuments();
+            logger.info (`Surveys queried, results: ${total}`);
+            return {data, total, page: numericPage, limit: numericLimit};
+
         } catch (err) {
             logger.error({ err }, 'Database error fetching survey data');
             throw err;
         }
     },
 
-    async saveSurveyDb(surveyData) {
+    async submitSurvey(surveyData) {
         try {
-            const survey = new WelcomeModels(surveyData);
+            await connectDB();
+            const survey = new SurveyModel(surveyData);
             await survey.save();
+            logger.info ("Survey Saved.");
         } catch (err) {
             logger.error({ err, surveyData }, 'Database error saving survey data');
             throw err;
         }
     },
 
-    async submitSurvey(surveyData) {
-        const dataService = await this.getConfiguredDataService();
-        if (!configured || !dataService) return surveyData;
-        return await dataService.saveSurveyDb(surveyData);
-    },
-
-    async getAllSurveys(params = {}) {
-        const dataService = await this.getConfiguredDataService();
-        if (!configured) return [];
-        const result = await dataService.getSurveysDb({
-            page: params.page || 1,
-            limit: params.limit || 100
-        });
-        return result.data;
-    }
 };
 
 // --- Subscribe Service ---
@@ -137,24 +150,7 @@ export const SubscribeService = {
     async subscribeNewsletter(emailAddress) {
         logger.info({ emailAddress }, 'Adding newsletter subscriber');
         try {
-            if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
-                return await SurveyService.saveSubscriber({ email: emailAddress });
-            }
-
-            let contacts = [];
-            try {
-                const data = await fs.readFile(FILE_PATHS.SUBSCRIBE_LIST, 'utf8');
-                contacts = JSON.parse(data);
-            } catch (err) {
-                if (err.code !== 'ENOENT') throw err;
-            }
-
-            const exists = contacts.find(e => e.email === emailAddress);
-            if (!exists) {
-                contacts.push({ email: emailAddress, subscribedAt: new Date().toISOString() });
-                await fs.mkdir(path.dirname(FILE_PATHS.SUBSCRIBE_LIST), { recursive: true });
-                await fs.writeFile(FILE_PATHS.SUBSCRIBE_LIST, JSON.stringify(contacts, null, 2));
-            }
+            return await WelcomeService.saveSubscriber({ email: emailAddress });
         } catch (err) {
             logger.error({ err }, 'Error in subscribeNewsletter');
             throw err;
@@ -163,7 +159,7 @@ export const SubscribeService = {
 
     async getEmailList() {
         if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
-            const result = await SurveyService.getSubscribers({ limit: 1000 });
+            const result = await WelcomeService.getSubscribers({ limit: 1000 });
             return result.data;
         }
 
@@ -185,8 +181,8 @@ export const SubscribeService = {
 
     async updateEmailList(email, action) {
         if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
-            if (action === 'add') await SurveyService.saveSubscriber({ email });
-            else if (action === 'remove') await SurveyService.removeSubscriber(email);
+            if (action === 'add') await WelcomeService.saveSubscriber({ email });
+            else if (action === 'remove') await WelcomeService.removeSubscriber(email);
             return email;
         }
 
@@ -216,7 +212,7 @@ export const SubscribeService = {
 export const ContactService = {
     async saveMessage(contactData) {
         if (SERVER_CONFIG.FEATURES.ENABLE_DB_MONGO) {
-            return await SurveyService.saveMessage(contactData);
+            return await WelcomeService.saveMessage(contactData);
         }
 
         logger.info({ from: contactData.from }, 'Processing new contact enquiry');

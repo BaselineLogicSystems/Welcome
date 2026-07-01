@@ -1,7 +1,5 @@
 
 import dotenv from 'dotenv';
-
-import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -42,6 +40,9 @@ export const SERVER_CONFIG = {
     DATA_DIR: path.join(projectRoot, 'data'),
     LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
 
+    // Performance
+    CIRCUIT_BREAKER_TIMEOUT: 60000, // 1 minute lockout
+
     // Security
     NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "BaselineLogicSystems@pm.me",
     RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW, 10) || 15 * 60 * 1000, // 15 mins
@@ -71,15 +72,15 @@ export const SERVER_CONFIG = {
         GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
         GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         SURVEY_RCPT: process.env.SURVEY_RCPT || 'ZacVohs-Consulting@pm.me',
-        SMTP_HOST: process.env.SMTP_HOST,
-        SMTP_PORT: process.env.SMTP_PORT,
-        SMTP_USER: process.env.SMTP_USER,
+        SMTP_HOST: process.env.SMTP_HOST || 'smtp.gmail.com',
+        SMTP_PORT: process.env.SMTP_PORT || 465,
+        SMTP_USER: process.env.SMTP_USER || 'BaselineLogicNotice@gmail.com',
         SMTP_PASS: process.env.SMTP_PASS
     },
 
     URLS: {
         CONVERTKIT_SERVER: process.env.CONVERTKIT_API_URL,
-        DB_MONDO_SERVER: process.env.DB_MONDO_SERVER,
+        DB_MONDO_SERVER: process.env.MONGODB_URI,
         DB_REDIS_SERVER: process.env.DB_REDIS_SERVER,
     }
 
@@ -91,19 +92,62 @@ export const FILE_PATHS = {
     SUBSCRIBE_LIST: path.join(SERVER_CONFIG.DATA_DIR, 'subscribe.json'),
 };
 
-const configPath = path.join(SERVER_CONFIG.ROOT_DIR, 'config', 'config.json');
-
-async function readJSON(filePath) {
-    try {
-        const data = await fs.readFile(filePath, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error(`Error reading JSON at ${filePath}:`, err);
-        return null;
+export const configJson = {
+    "app": {
+        "buildStatic": false,
+        "contextRoot": "/Welcome",
+        "name": "Welcome",
+        "title": "Web Landing Page",
+        "image": {
+            "imageFile": "banner0.jpg",
+            "caption": "Welcome!  We're glad you're here!"
+        },
+        "copyright": {
+            "name": "Baseline Logic Systems, LLC",
+            "email": "ZacVohs-Consulting@pm.me"
+        },
+        "features": {
+            "authorizationFooter": false,
+            "calendarLocal": false,
+            "emailLocal": true,
+            "newsletterLocal": false,
+            "nodeMailerEnabled": false
+        },
+        "pages": {
+            "index": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "index",
+                "link": "index.html",
+                "title": "Home"
+            },
+            "book": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "book",
+                "link": "book.html",
+                "title": "Backup Book"
+            },
+            "disclaimer": {
+                "enabled": true,
+                "indexed": false,
+                "contentFile": "disclaimer",
+                "link": "disclaimer.html",
+                "title": "Disclaimer and Privacy Policy"
+            },
+            "survey": {
+                "enabled": true,
+                "indexed": true,
+                "link": "survey.html",
+                "title": "Survey Questions"
+            },
+            "policy": {
+                "enabled": true,
+                "indexed": true,
+                "link": "policy.html",
+                "title": "Survey Policy"
+            }
+        }
     }
 }
 
-export async function readConfigFile() {
-    const baseCfg = await readJSON(configPath);
-    return baseCfg || {};
-}

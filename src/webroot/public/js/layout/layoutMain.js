@@ -9,16 +9,18 @@
  *
  */
 
-import { loadConfig, loadSiteData } from '../config/clientConfig.js';
+import { fetchJSON } from '../config/clientConfig.js';
 import { initHeader } from './layoutHeader.js';
 import { initNav } from './layoutNav.js';
 import { initFooter } from './layoutFooter.js';
 
 // Initialize the common page components
 async function initPage() {
-  // console.debug ('Initializing page in layoutMain');
-  const config = await loadConfig();
-  const siteseo = await loadSiteData();
+  // Load configuration and SEO data directly from the server endpoints
+  const [config, siteseo] = await Promise.all([
+    fetchJSON(`/config/config.json`),
+    fetchJSON(`/config/siteseo.json`)
+  ]);
 
   const pageAddress = document.body.dataset.page || 'index';
   const pageName = pageAddress.replace(/\.html$/, '');

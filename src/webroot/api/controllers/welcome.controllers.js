@@ -2,11 +2,12 @@
 import crypto from 'crypto';
 
 import { logger } from '../middleware/logger.js';
-import { ContactSchema } from '../schemas/surveySchema.js';
-import { ContactService, SubscribeService, SurveyService } from '../services/welcome.service.js';
-import { SubscribeSchema } from '../schemas/surveySchema.js';
-import { SurveySchema } from '../schemas/surveySchema.js';
+
+import { ContactSchema } from '../schemas/welcome.schemas.js';
+import { ContactService, SubscribeService, WelcomeService } from '../services/welcome.service.js';
 import { EmailService } from '../middleware/nodemailer.service.js';
+import { SubscribeSchema } from '../schemas/welcome.schemas.js';
+import { SurveySchema } from '../schemas/welcome.schemas.js';
 
 /**
  * Anonymizes an IP address using SHA-256 and a secret salt.
@@ -23,7 +24,7 @@ export const anonymizeIp = (ip) => {
     return crypto
         .createHmac('sha256', salt)
         .update(ip)
-        .digest('hex');
+        .digest('hex');  // Only include 20 characters for brevity.
 };
 
 // --- Contact Controllers ---
@@ -94,12 +95,12 @@ export const submitSurvey = async (req, res) => {
         // Capture the IP address from the request object
         const surveyPayload = {
             ...validatedData,
-            createdAt: new Date().toISOString(),
+            createdAt: new Date(),
             ipAddress: hashedIp
         };
 
         // Persist survey data to DB or filesystem.
-        await SurveyService.submitSurvey(surveyPayload);
+        await WelcomeService.submitSurvey(surveyPayload);
 
         // Separate from persistence, mail the survey when configured.
         await EmailService.sendSurveyAlert(surveyPayload);
@@ -117,7 +118,7 @@ export const submitSurvey = async (req, res) => {
 
 export const getSurveys = async (req, res) => {
     try {
-        const surveys = await SurveyService.getAllSurveys(req.query);
+        const surveys = await WelcomeService.getSurveys(req.query);
         res.json(surveys);
     } catch (err) {
         logger.error({ err, path: req.path }, 'Internal server error in getSurveys');
