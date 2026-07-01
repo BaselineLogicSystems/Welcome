@@ -1,11 +1,9 @@
 
 {
   "version": 2,
-  "functions": {
-    "api/server.js": {
-      "includeFiles": "public/**"
-    }
-  },
+  "builds": [{
+    "src": "api/server.js", "use": "@vercel/node"
+  }],
   "routes": [
     {
       "handle": "filesystem"
