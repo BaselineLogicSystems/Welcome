@@ -11,6 +11,10 @@
       "handle": "filesystem"
     },
     {
+      "src": "/",
+      "dest": "/pages/index.html"
+    },
+    {
       "src": "/(.*).html",
       "dest": "/pages/$1.html"
     },
