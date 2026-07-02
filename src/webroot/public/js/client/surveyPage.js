@@ -1,5 +1,5 @@
 
-import { surveyUI } from './surveyUi.js';
+import { surveyUI } from './surveyUI.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
