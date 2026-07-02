@@ -18,10 +18,22 @@ app.use(SERVER_CONFIG.CONTEXT_ROOT, express.static(SERVER_CONFIG.ROOT_DIR));
 app.use(apiRoutes);
 app.use(webRoutes);
 
-// --- 404 handler ---
 app.use((req, res) => {
-    const errorPage = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', 'error404.html');
-    res.status(404).sendFile(errorPage);
+    const errorPage = path.join(process.cwd(), 'public', 'pages', 'error404.html');
+    const fallbackPage = path.join(process.cwd(), 'pages', 'error404.html');
+    const fallbackPage2 = path.join(process.cwd(), '..', 'public', 'pages', 'error404.html');
+    const fallbackPage3 = path.join(process.cwd(), '..', 'pages', 'error404.html');
+    const fallbackPage4 = path.join(process.cwd(), 'src', 'webroot', 'public', 'pages', 'error404.html');
+
+    res.status(404).sendFile(errorPage, err => {
+        if (err) res.sendFile(fallbackPage, err => {
+            if (err) res.sendFile(fallbackPage2, err => {
+                if (err) res.sendFile(fallbackPage3, err => {
+                    if (err) res.sendFile(fallbackPage4);
+                });
+            });
+        });
+    });
 });
 
 // --- Generic error handler ------------------------------------------------
@@ -30,8 +42,11 @@ app.use(async (err, req, res) => {
     logger.error({ err, path: req.path, method: req.method }, 'Unhandled Server Error');
 
     // 3. Serve the professional error page
-    const errorPage = path.join(SERVER_CONFIG.ROOT_DIR, 'pages', 'error.html');
-    res.status(500).sendFile(errorPage);
+    const errorPage = path.join(process.cwd(), 'public', 'pages', 'error.html');
+    const fallbackPage = path.join(process.cwd(), 'pages', 'error.html');
+    res.status(500).sendFile(errorPage, err => {
+        if (err) res.sendFile(fallbackPage);
+    });
 });
 
 // Initialize DB connections before starting the listener
