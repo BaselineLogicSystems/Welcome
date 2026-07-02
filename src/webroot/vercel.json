@@ -12,7 +12,7 @@
     },
     {
       "src": "/",
-      "dest": "/pages/index.html"
+      "dest": "/pages/survey.html"
     },
     {
       "src": "/(.*).html",
