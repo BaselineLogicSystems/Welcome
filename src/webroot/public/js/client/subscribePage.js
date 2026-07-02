@@ -1,5 +1,5 @@
 
-import { subscribeUI } from './subscribeUi.js';
+import { subscribeUI } from './subscribeUI.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     subscribeUI.init('');
